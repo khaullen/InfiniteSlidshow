@@ -29,9 +29,11 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testInitWithGroupURL
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSURL *groupURL = [NSURL URLWithString:@"test"];
+    RCPhotoAlbum *album = [[RCPhotoAlbum alloc] initWithGroupURL:groupURL];
+    XCTAssertEqualObjects(album.groupURL, groupURL);
 }
 
 @end
