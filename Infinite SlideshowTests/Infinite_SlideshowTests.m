@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "RCAppDelegate.h"
 
 @interface Infinite_SlideshowTests : XCTestCase
 
