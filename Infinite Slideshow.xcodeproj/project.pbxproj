@@ -24,6 +24,7 @@
 		3B4374031882430E00D7F2D7 /* Infinite_SlideshowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4374021882430E00D7F2D7 /* Infinite_SlideshowTests.m */; };
 		3BFA70131887A4D2000C5C29 /* RCPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA70121887A4D2000C5C29 /* RCPhotoAlbum.m */; };
 		3BFA70141887A4D2000C5C29 /* RCPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA70121887A4D2000C5C29 /* RCPhotoAlbum.m */; };
+		3BFA701618881609000C5C29 /* RCPhotoAlbum_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA701518881609000C5C29 /* RCPhotoAlbum_Tests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		3B4374021882430E00D7F2D7 /* Infinite_SlideshowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Infinite_SlideshowTests.m; sourceTree = "<group>"; };
 		3BFA70111887A4D2000C5C29 /* RCPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPhotoAlbum.h; sourceTree = "<group>"; };
 		3BFA70121887A4D2000C5C29 /* RCPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPhotoAlbum.m; sourceTree = "<group>"; };
+		3BFA701518881609000C5C29 /* RCPhotoAlbum_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPhotoAlbum_Tests.m; sourceTree = "<group>"; };
 		C599201007964A909ACC12C9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DD596E7ADFE64DEE828BF2D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				3B4374021882430E00D7F2D7 /* Infinite_SlideshowTests.m */,
+				3BFA701518881609000C5C29 /* RCPhotoAlbum_Tests.m */,
 				3B4373FD1882430E00D7F2D7 /* Supporting Files */,
 			);
 			path = "Infinite SlideshowTests";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B4374031882430E00D7F2D7 /* Infinite_SlideshowTests.m in Sources */,
+				3BFA701618881609000C5C29 /* RCPhotoAlbum_Tests.m in Sources */,
 				3BFA70141887A4D2000C5C29 /* RCPhotoAlbum.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
