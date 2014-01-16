@@ -7,8 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "RCPhotoAlbum.h"
 
 @interface RCPhotoAlbum_Tests : XCTestCase
+
+@property (nonatomic, strong) RCPhotoAlbum *album;
 
 @end
 
@@ -17,7 +20,7 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here; it will be run once, before the first test case.
+    self.album = [[RCPhotoAlbum alloc] init];
 }
 
 - (void)tearDown
