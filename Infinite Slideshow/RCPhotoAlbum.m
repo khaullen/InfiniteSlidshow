@@ -10,4 +10,13 @@
 
 @implementation RCPhotoAlbum
 
+- (instancetype)initWithGroupURL:(NSURL *)groupURL
+{
+    self = [super init];
+    if (self) {
+        self.groupURL = groupURL;
+    }
+    return self;
+}
+
 @end
