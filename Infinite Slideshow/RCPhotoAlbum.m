@@ -7,6 +7,7 @@
 //
 
 #import "RCPhotoAlbum.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @implementation RCPhotoAlbum
 
@@ -15,6 +16,15 @@
     self = [super init];
     if (self) {
         self.groupURL = groupURL;
+    }
+    return self;
+}
+
+- (instancetype)initWithSource:(ALAssetsLibrary *)source
+{
+    self = [super init];
+    if (self) {
+        self.source = source;
     }
     return self;
 }

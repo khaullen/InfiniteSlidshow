@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class ALAssetsLibrary;
+
 /**
  Instances of `RCPhotoAlbum` provide the model layer for accessing a group of photos as an array of `UIImage` objects.
  */
@@ -19,11 +21,24 @@
 @property (nonatomic, strong) NSURL *groupURL;
 
 /**
+ The source to be used when fetching photos.
+ */
+@property (nonatomic, strong) ALAssetsLibrary *source;
+
+/**
  Initializes a new instance of `RCPhotoAlbum` with a given `groupURL`.
  
  @param groupURL The URL to be used when fetching photos from the photo library.
  @return A newly created photo album object initialized with the given group URL.
  */
 - (instancetype)initWithGroupURL:(NSURL *)groupURL;
+
+/**
+ Initializes a new instance of `RCPhotoAlbum` with a given source.
+ 
+ @param source The ALAssetsLibrary object to be used as the source for the photo album.
+ @return A newly created photo album object initialized with the given source.
+ */
+- (instancetype)initWithSource:(ALAssetsLibrary *)source;
 
 @end

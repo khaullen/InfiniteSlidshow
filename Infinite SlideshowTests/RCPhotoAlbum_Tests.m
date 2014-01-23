@@ -8,6 +8,15 @@
 
 #import <XCTest/XCTest.h>
 #import "RCPhotoAlbum.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+
+@interface TCAssetsLibrary : ALAssetsLibrary
+
+@end
+
+@implementation TCAssetsLibrary
+
+@end
 
 @interface RCPhotoAlbum_Tests : XCTestCase
 
@@ -34,6 +43,13 @@
     NSURL *groupURL = [NSURL URLWithString:@"test"];
     RCPhotoAlbum *album = [[RCPhotoAlbum alloc] initWithGroupURL:groupURL];
     XCTAssertEqualObjects(album.groupURL, groupURL);
+}
+
+- (void)testInitWithSource
+{
+    TCAssetsLibrary *library = [[TCAssetsLibrary alloc] init];
+    RCPhotoAlbum *album = [[RCPhotoAlbum alloc] initWithSource:library];
+    XCTAssertEqualObjects(album.source, library);
 }
 
 - (void)testSemaphore
