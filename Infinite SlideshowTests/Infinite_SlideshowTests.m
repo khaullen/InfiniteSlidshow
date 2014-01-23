@@ -27,14 +27,14 @@
     [super tearDown];
 }
 
-- (void)testSlideshowStartsOnAppLaunch
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
-
-- (void)testAppLoadsCorrectPhotoAlbum
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
+//- (void)testSlideshowStartsOnAppLaunch
+//{
+//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+//}
+//
+//- (void)testAppLoadsCorrectPhotoAlbum
+//{
+//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+//}
 
 @end
