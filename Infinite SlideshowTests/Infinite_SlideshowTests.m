@@ -73,7 +73,15 @@
 - (void)testUserDeniesAccess
 {
     TCAssetsLibrary *library = [[TCAssetsLibrary alloc] initWithSuccess:NO];
-    
+    RCAppDelegate *appDelegate = (RCAppDelegate *)[[UIApplication sharedApplication] delegate];
+    dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
+        appDelegate.library = library;
+    });
+    dispatch_semaphore_wait(library.semaphore, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC));
+    XCTAssertNil(appDelegate.photoAlbums);
+    XCTAssertFalse(appDelegate.isAuthorized);
+    XCTAssertEqual(appDelegate.authorizationError.code, (NSInteger)-3311);
+    XCTAssertNotEqual(appDelegate.authorizationError.code, 55);
 }
 
 - (void)testSemaphore
