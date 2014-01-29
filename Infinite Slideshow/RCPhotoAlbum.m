@@ -11,16 +11,7 @@
 
 @implementation RCPhotoAlbum
 
-- (instancetype)initWithGroupURL:(NSURL *)groupURL
-{
-    self = [super init];
-    if (self) {
-        self.groupURL = groupURL;
-    }
-    return self;
-}
-
-- (instancetype)initWithSource:(ALAssetsLibrary *)source
+- (instancetype)initWithSource:(ALAssetsGroup *)source
 {
     self = [super init];
     if (self) {
