@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class ALAssetsLibrary;
+
 @interface RCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+/**
+ The `ALAssetsLibrary` instance used to fetch photos from the camera roll and photostream
+ */
+@property (strong, nonatomic) ALAssetsLibrary *library;
 
 @end
