@@ -7,8 +7,17 @@
 //
 
 #import "RCAppDelegate.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+
+@interface RCAppDelegate ()
+
+@property (readwrite, nonatomic) NSError *authorizationError;
+
+@end
 
 @implementation RCAppDelegate
+
+#pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -41,6 +50,20 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Custom code
+
+- (void)setLibrary:(ALAssetsLibrary *)library
+{
+    if (_library != library) {
+        _library = library;
+        [library enumerateGroupsWithTypes:ALAssetsGroupPhotoStream usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+            
+        } failureBlock:^(NSError *error) {
+            self.authorizationError = error;
+        }];
+    }
 }
 
 @end
