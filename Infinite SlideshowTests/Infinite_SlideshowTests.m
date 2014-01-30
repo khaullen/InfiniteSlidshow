@@ -37,7 +37,12 @@
     switch (types) {
         case ALAssetsGroupPhotoStream:
             if (self.success) {
-                //                enumerationBlock();
+                NSArray *groups = @[[[ALAssetsGroup alloc] init],
+                                    [[ALAssetsGroup alloc] init],
+                                    [[ALAssetsGroup alloc] init]];
+                [groups enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    enumerationBlock(obj, stop);
+                }];
             } else {
                 error = [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"User denied access", NSUnderlyingErrorKey: [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"The operation couldn’t be completed"}], NSLocalizedFailureReasonErrorKey: @"The user has denied the application access to their media"}];
                 failureBlock(error);
@@ -82,6 +87,19 @@
     XCTAssertFalse(appDelegate.isAuthorized);
     XCTAssertEqual(appDelegate.authorizationError.code, (NSInteger)-3311);
     XCTAssertNotEqual(appDelegate.authorizationError.code, 55);
+}
+
+- (void)testUserApprovesAccess
+{
+    TCAssetsLibrary *library = [[TCAssetsLibrary alloc] initWithSuccess:YES];
+    RCAppDelegate *appDelegate = (RCAppDelegate *)[[UIApplication sharedApplication] delegate];
+    dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
+        appDelegate.library = library;
+    });
+    dispatch_semaphore_wait(library.semaphore, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC));
+    XCTAssertEqual(appDelegate.photoAlbums.count, (NSUInteger)3);
+    XCTAssertTrue(appDelegate.isAuthorized);
+    XCTAssertNil(appDelegate.authorizationError);
 }
 
 - (void)testSemaphore
