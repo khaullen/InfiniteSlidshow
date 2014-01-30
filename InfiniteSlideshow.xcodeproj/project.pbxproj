@@ -92,8 +92,8 @@
 		3B4373CB1882430D00D7F2D7 = {
 			isa = PBXGroup;
 			children = (
-				3B4373DD1882430D00D7F2D7 /* Infinite Slideshow */,
-				3B4373FC1882430E00D7F2D7 /* Infinite SlideshowTests */,
+				3B4373DD1882430D00D7F2D7 /* InfiniteSlideshow */,
+				3B4373FC1882430E00D7F2D7 /* InfiniteSlideshowTests */,
 				3B4373D61882430D00D7F2D7 /* Frameworks */,
 				3B4373D51882430D00D7F2D7 /* Products */,
 				C599201007964A909ACC12C9 /* Pods.xcconfig */,
@@ -121,7 +121,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3B4373DD1882430D00D7F2D7 /* Infinite Slideshow */ = {
+		3B4373DD1882430D00D7F2D7 /* InfiniteSlideshow */ = {
 			isa = PBXGroup;
 			children = (
 				3B4373E61882430D00D7F2D7 /* RCAppDelegate.h */,
@@ -134,7 +134,7 @@
 				3B4373EF1882430D00D7F2D7 /* Images.xcassets */,
 				3B4373DE1882430D00D7F2D7 /* Supporting Files */,
 			);
-			path = "Infinite Slideshow";
+			path = InfiniteSlideshow;
 			sourceTree = "<group>";
 		};
 		3B4373DE1882430D00D7F2D7 /* Supporting Files */ = {
@@ -148,13 +148,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3B4373FC1882430E00D7F2D7 /* Infinite SlideshowTests */ = {
+		3B4373FC1882430E00D7F2D7 /* InfiniteSlideshowTests */ = {
 			isa = PBXGroup;
 			children = (
 				3B4374021882430E00D7F2D7 /* Infinite_SlideshowTests.m */,
 				3BFA701518881609000C5C29 /* RCPhotoAlbum_Tests.m */,
 				3B4373FD1882430E00D7F2D7 /* Supporting Files */,
 			);
+			name = InfiniteSlideshowTests;
 			path = "Infinite SlideshowTests";
 			sourceTree = "<group>";
 		};
@@ -436,8 +437,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Infinite Slideshow/InfiniteSlideshow-Prefix.pch";
-				INFOPLIST_FILE = "Infinite Slideshow/InfiniteSlideshow-Info.plist";
+				GCC_PREFIX_HEADER = "InfiniteSlideshow/InfiniteSlideshow-Prefix.pch";
+				INFOPLIST_FILE = "InfiniteSlideshow/InfiniteSlideshow-Info.plist";
 				PRODUCT_NAME = InfiniteSlideshow;
 				WRAPPER_EXTENSION = app;
 			};
@@ -450,8 +451,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Infinite Slideshow/InfiniteSlideshow-Prefix.pch";
-				INFOPLIST_FILE = "Infinite Slideshow/InfiniteSlideshow-Info.plist";
+				GCC_PREFIX_HEADER = "InfiniteSlideshow/InfiniteSlideshow-Prefix.pch";
+				INFOPLIST_FILE = "InfiniteSlideshow/InfiniteSlideshow-Info.plist";
 				PRODUCT_NAME = InfiniteSlideshow;
 				WRAPPER_EXTENSION = app;
 			};
@@ -468,7 +469,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Infinite Slideshow/InfiniteSlideshow-Prefix.pch";
+				GCC_PREFIX_HEADER = "InfiniteSlideshow/InfiniteSlideshow-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -491,7 +492,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Infinite Slideshow/InfiniteSlideshow-Prefix.pch";
+				GCC_PREFIX_HEADER = "InfiniteSlideshow/InfiniteSlideshow-Prefix.pch";
 				INFOPLIST_FILE = "Infinite SlideshowTests/InfiniteSlideshowTests-Info.plist";
 				PRODUCT_NAME = InfiniteSlideshowTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
