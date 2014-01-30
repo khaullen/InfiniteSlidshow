@@ -11,6 +11,7 @@
 
 @interface RCAppDelegate ()
 
+@property (readwrite, nonatomic) NSArray *photoAlbums;
 @property (readwrite, nonatomic) NSError *authorizationError;
 
 @end
@@ -58,12 +59,19 @@
 {
     if (_library != library) {
         _library = library;
+        NSMutableArray *groups = [NSMutableArray new];
         [library enumerateGroupsWithTypes:ALAssetsGroupPhotoStream usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-            
+            [groups addObject:group];
         } failureBlock:^(NSError *error) {
             self.authorizationError = error;
         }];
+        self.photoAlbums = groups;
     }
+}
+
+- (BOOL)isAuthorized
+{
+    return [[self.library class] authorizationStatus] == ALAuthorizationStatusAuthorized;
 }
 
 @end

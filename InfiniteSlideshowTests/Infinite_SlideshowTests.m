@@ -83,7 +83,7 @@
         appDelegate.library = library;
     });
     dispatch_semaphore_wait(library.semaphore, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC));
-    XCTAssertNil(appDelegate.photoAlbums);
+    XCTAssertEqual(appDelegate.photoAlbums.count, (NSUInteger)0);
     XCTAssertFalse(appDelegate.isAuthorized);
     XCTAssertEqual(appDelegate.authorizationError.code, (NSInteger)-3311);
     XCTAssertNotEqual(appDelegate.authorizationError.code, 55);
