@@ -10,22 +10,54 @@
 #import "RCAppDelegate.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
-@interface TCAssetsLibrary : ALAssetsLibrary
+@interface TCAssetsLibrarySuccess : ALAssetsLibrary
 
-@property BOOL success;
 @property (nonatomic, strong) dispatch_semaphore_t semaphore;
-
-- (instancetype)initWithSuccess:(BOOL)success;
 
 @end
 
-@implementation TCAssetsLibrary
+@implementation TCAssetsLibrarySuccess
 
-- (instancetype)initWithSuccess:(BOOL)success
+- (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.success = success;
+        self.semaphore = dispatch_semaphore_create(0);
+    }
+    return self;
+}
+
+- (void)enumerateGroupsWithTypes:(ALAssetsGroupType)types usingBlock:(ALAssetsLibraryGroupsEnumerationResultsBlock)enumerationBlock failureBlock:(ALAssetsLibraryAccessFailureBlock)failureBlock
+{
+    if (types == ALAssetsGroupPhotoStream) {
+        NSArray *groups = @[[[ALAssetsGroup alloc] init],
+                            [[ALAssetsGroup alloc] init],
+                            [[ALAssetsGroup alloc] init]];
+        [groups enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            enumerationBlock(obj, stop);
+        }];
+    }
+}
+
++ (ALAuthorizationStatus)authorizationStatus
+{
+    return ALAuthorizationStatusAuthorized;
+}
+
+@end
+
+@interface TCAssetsLibraryFailure : ALAssetsLibrary
+
+@property (nonatomic, strong) dispatch_semaphore_t semaphore;
+
+@end
+
+@implementation TCAssetsLibraryFailure
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
         self.semaphore = dispatch_semaphore_create(0);
     }
     return self;
@@ -36,23 +68,19 @@
     NSError *error;
     switch (types) {
         case ALAssetsGroupPhotoStream:
-            if (self.success) {
-                NSArray *groups = @[[[ALAssetsGroup alloc] init],
-                                    [[ALAssetsGroup alloc] init],
-                                    [[ALAssetsGroup alloc] init]];
-                [groups enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    enumerationBlock(obj, stop);
-                }];
-            } else {
-                error = [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"User denied access", NSUnderlyingErrorKey: [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"The operation couldn’t be completed"}], NSLocalizedFailureReasonErrorKey: @"The user has denied the application access to their media"}];
-                failureBlock(error);
-                dispatch_semaphore_signal(self.semaphore);
-            }
+            error = [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"User denied access", NSUnderlyingErrorKey: [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"The operation couldn’t be completed"}], NSLocalizedFailureReasonErrorKey: @"The user has denied the application access to their media"}];
+            failureBlock(error);
+            dispatch_semaphore_signal(self.semaphore);
             break;
             
         default:
             break;
     }
+}
+
++ (ALAuthorizationStatus)authorizationStatus
+{
+    return ALAuthorizationStatusDenied;
 }
 
 @end
@@ -77,7 +105,7 @@
 
 - (void)testUserDeniesAccess
 {
-    TCAssetsLibrary *library = [[TCAssetsLibrary alloc] initWithSuccess:NO];
+    TCAssetsLibraryFailure *library = [[TCAssetsLibraryFailure alloc] init];
     RCAppDelegate *appDelegate = (RCAppDelegate *)[[UIApplication sharedApplication] delegate];
     dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
         appDelegate.library = library;
@@ -91,7 +119,7 @@
 
 - (void)testUserApprovesAccess
 {
-    TCAssetsLibrary *library = [[TCAssetsLibrary alloc] initWithSuccess:YES];
+    TCAssetsLibrarySuccess *library = [[TCAssetsLibrarySuccess alloc] init];
     RCAppDelegate *appDelegate = (RCAppDelegate *)[[UIApplication sharedApplication] delegate];
     dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
         appDelegate.library = library;
