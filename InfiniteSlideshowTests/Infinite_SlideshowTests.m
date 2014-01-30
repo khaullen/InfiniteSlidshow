@@ -130,31 +130,6 @@
     XCTAssertNil(appDelegate.authorizationError);
 }
 
-- (void)testSemaphore
-{
-    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        [NSThread sleepForTimeInterval:3.0f];
-        dispatch_semaphore_signal(sema);
-    });
-    dispatch_async(dispatch_queue_create("1", NULL), ^{
-        [NSThread sleepForTimeInterval:1.0f];
-        NSLog(@"1");
-    });
-    dispatch_async(dispatch_queue_create("2", NULL), ^{
-        [NSThread sleepForTimeInterval:2.0f];
-        NSLog(@"2");
-    });
-    dispatch_async(dispatch_queue_create("3", NULL), ^{
-        [NSThread sleepForTimeInterval:3.0f];
-        NSLog(@"3");
-    });
-    NSLog(@"Waiting...");
-    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-    NSLog(@"Finished.");
-    XCTAssertTrue(YES);
-}
-
 // Idea for testing asynchronous methods:
 // Dependency injection -- inject mock ALAssetsLibrary object into RCPhotoAlbum
 // Subclass ALAssetsLibrary and override all its public methods to call either success or failure block immediately with mock data
