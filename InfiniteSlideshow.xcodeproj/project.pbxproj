@@ -38,23 +38,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B4373D41882430D00D7F2D7 /* Infinite Slideshow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Infinite Slideshow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4373D41882430D00D7F2D7 /* InfiniteSlideshow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteSlideshow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4373D71882430D00D7F2D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3B4373D91882430D00D7F2D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3B4373DB1882430D00D7F2D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3B4373DF1882430D00D7F2D7 /* Infinite Slideshow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Infinite Slideshow-Info.plist"; sourceTree = "<group>"; };
+		3B4373DF1882430D00D7F2D7 /* InfiniteSlideshow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InfiniteSlideshow-Info.plist"; sourceTree = "<group>"; };
 		3B4373E11882430D00D7F2D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B4373E31882430D00D7F2D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3B4373E51882430D00D7F2D7 /* Infinite Slideshow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Infinite Slideshow-Prefix.pch"; sourceTree = "<group>"; };
+		3B4373E51882430D00D7F2D7 /* InfiniteSlideshow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfiniteSlideshow-Prefix.pch"; sourceTree = "<group>"; };
 		3B4373E61882430D00D7F2D7 /* RCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCAppDelegate.h; sourceTree = "<group>"; };
 		3B4373E71882430D00D7F2D7 /* RCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCAppDelegate.m; sourceTree = "<group>"; };
 		3B4373EA1882430D00D7F2D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B4373EC1882430D00D7F2D7 /* RCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCViewController.h; sourceTree = "<group>"; };
 		3B4373ED1882430D00D7F2D7 /* RCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCViewController.m; sourceTree = "<group>"; };
 		3B4373EF1882430D00D7F2D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3B4373F51882430E00D7F2D7 /* Infinite SlideshowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Infinite SlideshowTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4373F51882430E00D7F2D7 /* InfiniteSlideshowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfiniteSlideshowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4373F61882430E00D7F2D7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3B4373FE1882430E00D7F2D7 /* Infinite SlideshowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Infinite SlideshowTests-Info.plist"; sourceTree = "<group>"; };
+		3B4373FE1882430E00D7F2D7 /* InfiniteSlideshowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InfiniteSlideshowTests-Info.plist"; sourceTree = "<group>"; };
 		3B4374001882430E00D7F2D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B4374021882430E00D7F2D7 /* Infinite_SlideshowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Infinite_SlideshowTests.m; sourceTree = "<group>"; };
 		3BFA70111887A4D2000C5C29 /* RCPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPhotoAlbum.h; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		3B4373D51882430D00D7F2D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B4373D41882430D00D7F2D7 /* Infinite Slideshow.app */,
-				3B4373F51882430E00D7F2D7 /* Infinite SlideshowTests.xctest */,
+				3B4373D41882430D00D7F2D7 /* InfiniteSlideshow.app */,
+				3B4373F51882430E00D7F2D7 /* InfiniteSlideshowTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,10 +140,10 @@
 		3B4373DE1882430D00D7F2D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3B4373DF1882430D00D7F2D7 /* Infinite Slideshow-Info.plist */,
+				3B4373DF1882430D00D7F2D7 /* InfiniteSlideshow-Info.plist */,
 				3B4373E01882430D00D7F2D7 /* InfoPlist.strings */,
 				3B4373E31882430D00D7F2D7 /* main.m */,
-				3B4373E51882430D00D7F2D7 /* Infinite Slideshow-Prefix.pch */,
+				3B4373E51882430D00D7F2D7 /* InfiniteSlideshow-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -161,7 +161,7 @@
 		3B4373FD1882430E00D7F2D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3B4373FE1882430E00D7F2D7 /* Infinite SlideshowTests-Info.plist */,
+				3B4373FE1882430E00D7F2D7 /* InfiniteSlideshowTests-Info.plist */,
 				3B4373FF1882430E00D7F2D7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -170,9 +170,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3B4373D31882430D00D7F2D7 /* Infinite Slideshow */ = {
+		3B4373D31882430D00D7F2D7 /* InfiniteSlideshow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B4374061882430E00D7F2D7 /* Build configuration list for PBXNativeTarget "Infinite Slideshow" */;
+			buildConfigurationList = 3B4374061882430E00D7F2D7 /* Build configuration list for PBXNativeTarget "InfiniteSlideshow" */;
 			buildPhases = (
 				B293E9164FE345A1B54FE874 /* Check Pods Manifest.lock */,
 				3B4373D01882430D00D7F2D7 /* Sources */,
@@ -184,14 +184,14 @@
 			);
 			dependencies = (
 			);
-			name = "Infinite Slideshow";
+			name = InfiniteSlideshow;
 			productName = "Infinite Slideshow";
-			productReference = 3B4373D41882430D00D7F2D7 /* Infinite Slideshow.app */;
+			productReference = 3B4373D41882430D00D7F2D7 /* InfiniteSlideshow.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3B4373F41882430E00D7F2D7 /* Infinite SlideshowTests */ = {
+		3B4373F41882430E00D7F2D7 /* InfiniteSlideshowTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B4374091882430E00D7F2D7 /* Build configuration list for PBXNativeTarget "Infinite SlideshowTests" */;
+			buildConfigurationList = 3B4374091882430E00D7F2D7 /* Build configuration list for PBXNativeTarget "InfiniteSlideshowTests" */;
 			buildPhases = (
 				3B4373F11882430E00D7F2D7 /* Sources */,
 				3B4373F21882430E00D7F2D7 /* Frameworks */,
@@ -202,9 +202,9 @@
 			dependencies = (
 				3B4373FB1882430E00D7F2D7 /* PBXTargetDependency */,
 			);
-			name = "Infinite SlideshowTests";
+			name = InfiniteSlideshowTests;
 			productName = "Infinite SlideshowTests";
-			productReference = 3B4373F51882430E00D7F2D7 /* Infinite SlideshowTests.xctest */;
+			productReference = 3B4373F51882430E00D7F2D7 /* InfiniteSlideshowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -222,7 +222,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3B4373CF1882430D00D7F2D7 /* Build configuration list for PBXProject "Infinite Slideshow" */;
+			buildConfigurationList = 3B4373CF1882430D00D7F2D7 /* Build configuration list for PBXProject "InfiniteSlideshow" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -235,8 +235,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B4373D31882430D00D7F2D7 /* Infinite Slideshow */,
-				3B4373F41882430E00D7F2D7 /* Infinite SlideshowTests */,
+				3B4373D31882430D00D7F2D7 /* InfiniteSlideshow */,
+				3B4373F41882430E00D7F2D7 /* InfiniteSlideshowTests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,7 +322,7 @@
 /* Begin PBXTargetDependency section */
 		3B4373FB1882430E00D7F2D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3B4373D31882430D00D7F2D7 /* Infinite Slideshow */;
+			target = 3B4373D31882430D00D7F2D7 /* InfiniteSlideshow */;
 			targetProxy = 3B4373FA1882430E00D7F2D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -436,9 +436,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Infinite Slideshow/Infinite Slideshow-Prefix.pch";
-				INFOPLIST_FILE = "Infinite Slideshow/Infinite Slideshow-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Infinite Slideshow/InfiniteSlideshow-Prefix.pch";
+				INFOPLIST_FILE = "Infinite Slideshow/InfiniteSlideshow-Info.plist";
+				PRODUCT_NAME = InfiniteSlideshow;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -450,9 +450,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Infinite Slideshow/Infinite Slideshow-Prefix.pch";
-				INFOPLIST_FILE = "Infinite Slideshow/Infinite Slideshow-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Infinite Slideshow/InfiniteSlideshow-Prefix.pch";
+				INFOPLIST_FILE = "Infinite Slideshow/InfiniteSlideshow-Info.plist";
+				PRODUCT_NAME = InfiniteSlideshow;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -461,20 +461,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Infinite Slideshow.app/Infinite Slideshow";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfiniteSlideshow.app/InfiniteSlideshow";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Infinite Slideshow/Infinite Slideshow-Prefix.pch";
+				GCC_PREFIX_HEADER = "Infinite Slideshow/InfiniteSlideshow-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Infinite SlideshowTests/Infinite SlideshowTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Infinite SlideshowTests/InfiniteSlideshowTests-Info.plist";
+				PRODUCT_NAME = InfiniteSlideshowTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -484,16 +484,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Infinite Slideshow.app/Infinite Slideshow";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfiniteSlideshow.app/InfiniteSlideshow";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Infinite Slideshow/Infinite Slideshow-Prefix.pch";
-				INFOPLIST_FILE = "Infinite SlideshowTests/Infinite SlideshowTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Infinite Slideshow/InfiniteSlideshow-Prefix.pch";
+				INFOPLIST_FILE = "Infinite SlideshowTests/InfiniteSlideshowTests-Info.plist";
+				PRODUCT_NAME = InfiniteSlideshowTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -502,7 +502,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3B4373CF1882430D00D7F2D7 /* Build configuration list for PBXProject "Infinite Slideshow" */ = {
+		3B4373CF1882430D00D7F2D7 /* Build configuration list for PBXProject "InfiniteSlideshow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B4374041882430E00D7F2D7 /* Debug */,
@@ -511,7 +511,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B4374061882430E00D7F2D7 /* Build configuration list for PBXNativeTarget "Infinite Slideshow" */ = {
+		3B4374061882430E00D7F2D7 /* Build configuration list for PBXNativeTarget "InfiniteSlideshow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B4374071882430E00D7F2D7 /* Debug */,
@@ -520,7 +520,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B4374091882430E00D7F2D7 /* Build configuration list for PBXNativeTarget "Infinite SlideshowTests" */ = {
+		3B4374091882430E00D7F2D7 /* Build configuration list for PBXNativeTarget "InfiniteSlideshowTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B43740A1882430E00D7F2D7 /* Debug */,
