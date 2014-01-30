@@ -155,8 +155,7 @@
 				3BFA701518881609000C5C29 /* RCPhotoAlbum_Tests.m */,
 				3B4373FD1882430E00D7F2D7 /* Supporting Files */,
 			);
-			name = InfiniteSlideshowTests;
-			path = "Infinite SlideshowTests";
+			path = InfiniteSlideshowTests;
 			sourceTree = "<group>";
 		};
 		3B4373FD1882430E00D7F2D7 /* Supporting Files */ = {
@@ -474,7 +473,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Infinite SlideshowTests/InfiniteSlideshowTests-Info.plist";
+				INFOPLIST_FILE = "InfiniteSlideshowTests/InfiniteSlideshowTests-Info.plist";
 				PRODUCT_NAME = InfiniteSlideshowTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -493,7 +492,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfiniteSlideshow/InfiniteSlideshow-Prefix.pch";
-				INFOPLIST_FILE = "Infinite SlideshowTests/InfiniteSlideshowTests-Info.plist";
+				INFOPLIST_FILE = "InfiniteSlideshowTests/InfiniteSlideshowTests-Info.plist";
 				PRODUCT_NAME = InfiniteSlideshowTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
