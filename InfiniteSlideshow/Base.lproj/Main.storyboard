@@ -16,13 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-Z0-cpa" customClass="KASlideShow">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-Z0-cpa" customClass="KASlideShow">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aVi-1s-wkj" firstAttribute="top" secondItem="EAq-Z0-cpa" secondAttribute="bottom" constant="-1004" id="3Aq-b4-prO"/>
+                            <constraint firstAttribute="centerX" secondItem="EAq-Z0-cpa" secondAttribute="centerX" id="7FJ-aL-jhd"/>
+                            <constraint firstItem="EAq-Z0-cpa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MJt-ul-JC7"/>
+                            <constraint firstAttribute="centerY" secondItem="EAq-Z0-cpa" secondAttribute="centerY" id="UhJ-0D-xBv"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="slideShowView" destination="EAq-Z0-cpa" id="dcc-qu-M55"/>
