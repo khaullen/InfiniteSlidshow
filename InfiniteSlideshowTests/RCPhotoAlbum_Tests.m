@@ -65,4 +65,10 @@
     XCTAssertEqual([album.photos count], (NSUInteger)3);
 }
 
+- (void)testThatPhotosArrayIsPopulatedWithUIImageObjects
+{
+    self.album.source = [[TCAssetsGroup alloc] init];
+    XCTAssertTrue([[self.album.photos lastObject] isKindOfClass:[UIImage class]]);
+}
+
 @end
