@@ -21,6 +21,11 @@
 @property (nonatomic, strong) ALAssetsGroup *source;
 
 /**
+ An array of `UIImage` objects derived from the `source` property.
+ */
+@property (nonatomic, readonly) NSArray *photos;
+
+/**
  Initializes a new instance of `RCPhotoAlbum` with a given `groupURL`.
  
  @param groupURL The URL to be used when fetching photos from the photo library.
