@@ -12,20 +12,9 @@
 
 @interface TCAssetsGroup : ALAssetsGroup
 
-@property (nonatomic, strong) dispatch_semaphore_t semaphore;
-
 @end
 
 @implementation TCAssetsGroup
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.semaphore = dispatch_semaphore_create(0);
-    }
-    return self;
-}
 
 - (void)enumerateAssetsUsingBlock:(ALAssetsGroupEnumerationResultsBlock)enumerationBlock
 {
@@ -35,7 +24,7 @@
     [assets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         enumerationBlock(obj, idx, stop);
     }];
-    dispatch_semaphore_signal(self.semaphore);
+    enumerationBlock(nil, NSNotFound, NULL);
 }
 
 @end
