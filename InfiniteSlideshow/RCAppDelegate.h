@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class ALAssetsLibrary;
+@class RCPhotoAlbum;
 
 @interface RCAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -33,5 +34,10 @@
  An error object indicating the reason, if any, that photo library access was denied
  */
 @property (readonly, nonatomic) NSError *authorizationError;
+
+/**
+ A reference to the hardcoded photo album that will be used for the slideshow
+ */
+@property (readonly, nonatomic) RCPhotoAlbum *hardcodedAlbum;
 
 @end

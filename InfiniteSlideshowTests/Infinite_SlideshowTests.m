@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "RCAppDelegate.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "RCPhotoAlbum.h"
 
 @interface TCAssetsLibrarySuccess : ALAssetsLibrary
 
@@ -128,6 +129,21 @@
     XCTAssertEqual(appDelegate.photoAlbums.count, (NSUInteger)3);
     XCTAssertTrue(appDelegate.isAuthorized);
     XCTAssertNil(appDelegate.authorizationError);
+}
+
+- (void)testHardcodedPhotoAlbum
+{
+    TCAssetsLibrarySuccess *library = [[TCAssetsLibrarySuccess alloc] init];
+    RCAppDelegate *appDelegate = (RCAppDelegate *)[[UIApplication sharedApplication] delegate];
+    dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
+        appDelegate.library = library;
+    });
+    dispatch_semaphore_wait(library.semaphore, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC));
+    Class klass0 = [appDelegate.hardcodedAlbum class];
+    Class klass1 = [RCPhotoAlbum class];
+//    XCTAssertEqualObjects([klass0 class], [klass1 class]);
+//    XCTAssertTrue([appDelegate.hardcodedAlbum isKindOfClass:[RCPhotoAlbum class]]);
+    XCTAssertEqualObjects([klass1 description], [klass0 description]);
 }
 
 // Idea for testing asynchronous methods:
