@@ -38,6 +38,7 @@
             enumerationBlock(obj, stop);
         }];
     }
+    dispatch_semaphore_signal(self.semaphore);
 }
 
 + (ALAuthorizationStatus)authorizationStatus
