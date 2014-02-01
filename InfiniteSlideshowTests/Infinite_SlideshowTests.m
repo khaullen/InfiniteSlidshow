@@ -112,7 +112,7 @@
     dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
         appDelegate.library = library;
     });
-    dispatch_semaphore_wait(library.semaphore, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC));
+    dispatch_semaphore_wait(library.semaphore, DISPATCH_TIME_FOREVER);
     XCTAssertEqual(appDelegate.photoAlbums.count, (NSUInteger)0);
     XCTAssertFalse(appDelegate.isAuthorized);
     XCTAssertEqual(appDelegate.authorizationError.code, (NSInteger)-3311);
@@ -126,7 +126,7 @@
     dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
         appDelegate.library = library;
     });
-    dispatch_semaphore_wait(library.semaphore, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC));
+    dispatch_semaphore_wait(library.semaphore, DISPATCH_TIME_FOREVER);
     XCTAssertEqual(appDelegate.photoAlbums.count, (NSUInteger)3);
     XCTAssertTrue(appDelegate.isAuthorized);
     XCTAssertNil(appDelegate.authorizationError);
@@ -139,7 +139,7 @@
     dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
         appDelegate.library = library;
     });
-    dispatch_semaphore_wait(library.semaphore, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC));
+    dispatch_semaphore_wait(library.semaphore, DISPATCH_TIME_FOREVER);
     Class klass0 = [appDelegate.hardcodedAlbum class];
     Class klass1 = [RCPhotoAlbum class];
 //    XCTAssertEqualObjects([klass0 class], [klass1 class]);
