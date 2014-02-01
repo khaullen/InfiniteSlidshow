@@ -34,10 +34,11 @@
         NSMutableArray *photos = [NSMutableArray new];
         [source enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
             if (result) {
-                ALAssetRepresentation *rep = [result defaultRepresentation];
-                CGImageRef imageRef = [rep fullScreenImage];
-                UIImage *image = [UIImage imageWithCGImage:imageRef];
-                [photos addObject:image];
+                if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
+                    CGImageRef ref = [result aspectRatioThumbnail];
+                    UIImage *image = [UIImage imageWithCGImage:ref];
+                    if (image) [photos addObject:image];
+                }
             }
         }];
         self.photos = photos;
