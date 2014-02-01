@@ -9,6 +9,7 @@
 #import "RCViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "RCPhotoAlbum.h"
+#import "KASlideShow.h"
 
 static NSString *const kRCHardcodedGroupName = @"";
 static NSString *const kRCAlertViewTitle = @"Warning";
@@ -40,6 +41,15 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kRCAlertViewTitle message:kRCUserDeniedAccessMessage delegate:self cancelButtonTitle:kRCAlertViewCancelButtonTitle otherButtonTitles:nil];
         [alert show];
     }];
+}
+
+- (void)setPhotoAlbum:(RCPhotoAlbum *)photoAlbum
+{
+    if (_photoAlbum != photoAlbum) {
+        _photoAlbum = photoAlbum;
+        self.slideShowView.images = [photoAlbum.photos mutableCopy];
+        [self.slideShowView start];
+    }
 }
 
 - (void)didReceiveMemoryWarning
