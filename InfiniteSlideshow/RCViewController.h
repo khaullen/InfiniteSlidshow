@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class KASlideShow;
+
 @interface RCViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet KASlideShow *slideShowView;
 
 @end
