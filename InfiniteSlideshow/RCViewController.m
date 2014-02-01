@@ -7,6 +7,7 @@
 //
 
 #import "RCViewController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface RCViewController ()
 
@@ -17,7 +18,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library enumerateGroupsWithTypes:ALAssetsGroupPhotoStream usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+        
+    } failureBlock:^(NSError *error) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"This app requires photo library access" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
