@@ -11,7 +11,7 @@
 #import "RCPhotoAlbum.h"
 #import "KASlideShow.h"
 
-static NSString *const kRCHardcodedGroupName = @"Thailand";
+static NSString *const kRCHardcodedGroupName = @"Hacker School";
 static NSString *const kRCAlertViewTitle = @"Warning";
 static NSString *const kRCAlertViewCancelButtonTitle = @"OK";
 static NSString *const kRCGroupNotFoundMessage = @"The designated photo album was not found";

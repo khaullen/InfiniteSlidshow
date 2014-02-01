@@ -35,8 +35,9 @@
         [source enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
             if (result) {
                 if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
-                    CGImageRef ref = [result aspectRatioThumbnail];
-                    UIImage *image = [UIImage imageWithCGImage:ref];
+                    ALAssetRepresentation *rep = [result defaultRepresentation];
+                    CGImageRef imageRef = rep ? [rep fullScreenImage] : [result aspectRatioThumbnail];
+                    UIImage *image = [UIImage imageWithCGImage:imageRef];
                     if (image) [photos addObject:image];
                 }
             }
