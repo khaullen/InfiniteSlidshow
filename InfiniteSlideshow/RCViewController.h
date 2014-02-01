@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class KASlideShow;
+@class RCPhotoAlbum;
 
 @interface RCViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet KASlideShow *slideShowView;
+
+@property (strong, nonatomic) RCPhotoAlbum *photoAlbum;
 
 @end
