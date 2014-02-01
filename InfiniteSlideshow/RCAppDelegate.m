@@ -62,6 +62,8 @@ static NSString *const kHardcodedAlbumName = @"test";
 {
     if (_library != library) {
         _library = library;
+        self.photoAlbums = nil;
+        self.authorizationError = nil;
         NSMutableArray *groups = [NSMutableArray new];
         [library enumerateGroupsWithTypes:ALAssetsGroupPhotoStream usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
             [groups addObject:group];
