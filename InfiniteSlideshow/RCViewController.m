@@ -33,7 +33,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
         if ([name isEqualToString:kRCHardcodedGroupName]) {
             self.photoAlbum = [[RCPhotoAlbum alloc] initWithSource:group];
             *stop = YES;
-        } else if (!group) {
+        } else if (!group && !*stop) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kRCAlertViewTitle message:kRCGroupNotFoundMessage delegate:self cancelButtonTitle:kRCAlertViewCancelButtonTitle otherButtonTitles:nil];
             [alert show];
         }
