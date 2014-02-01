@@ -34,6 +34,12 @@
     return [[TCAssetRepresentation alloc] init];
 }
 
+- (id)valueForProperty:(NSString *)property
+{
+    if ([property isEqualToString:ALAssetPropertyType]) return ALAssetTypePhoto;
+    return [super valueForProperty:property];
+}
+
 @end
 
 @interface TCAssetsGroup : ALAssetsGroup
