@@ -10,6 +10,32 @@
 #import "RCPhotoAlbum.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
+@interface TCAssetRepresentation : ALAssetRepresentation
+
+@end
+
+@implementation TCAssetRepresentation
+
+- (CGImageRef)fullScreenImage
+{
+    return [[UIImage imageNamed:@"Loopback"] CGImage];
+}
+
+@end
+
+@interface TCAsset : ALAsset
+
+@end
+
+@implementation TCAsset
+
+- (ALAssetRepresentation *)defaultRepresentation
+{
+    return [[TCAssetRepresentation alloc] init];
+}
+
+@end
+
 @interface TCAssetsGroup : ALAssetsGroup
 
 @end
@@ -18,9 +44,9 @@
 
 - (void)enumerateAssetsUsingBlock:(ALAssetsGroupEnumerationResultsBlock)enumerationBlock
 {
-    NSArray *assets = @[[[ALAsset alloc] init],
-                        [[ALAsset alloc] init],
-                        [[ALAsset alloc] init]];
+    NSArray *assets = @[[[TCAsset alloc] init],
+                        [[TCAsset alloc] init],
+                        [[TCAsset alloc] init]];
     [assets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         enumerationBlock(obj, idx, stop);
     }];
