@@ -37,6 +37,7 @@
         [groups enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             enumerationBlock(obj, stop);
         }];
+        enumerationBlock(nil, NULL);
     }
     dispatch_semaphore_signal(self.semaphore);
 }
@@ -127,7 +128,7 @@
         appDelegate.library = library;
     });
     dispatch_semaphore_wait(library.semaphore, DISPATCH_TIME_FOREVER);
-    XCTAssertEqual(appDelegate.photoAlbums.count, (NSUInteger)3);
+    XCTAssertEqual([appDelegate.photoAlbums count], (NSUInteger)3);
     XCTAssertTrue(appDelegate.isAuthorized);
     XCTAssertNil(appDelegate.authorizationError);
 }
