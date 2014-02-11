@@ -26,6 +26,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.slideShowView.imagesContentMode = UIViewContentModeScaleAspectFit;
 
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     [library enumerateGroupsWithTypes:ALAssetsGroupPhotoStream usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
@@ -41,6 +42,11 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kRCAlertViewTitle message:kRCUserDeniedAccessMessage delegate:self cancelButtonTitle:kRCAlertViewCancelButtonTitle otherButtonTitles:nil];
         [alert show];
     }];
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationLandscapeRight;
 }
 
 - (void)setPhotoAlbum:(RCPhotoAlbum *)photoAlbum
