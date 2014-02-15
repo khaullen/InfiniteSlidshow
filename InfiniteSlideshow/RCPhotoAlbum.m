@@ -116,10 +116,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 
 - (void)assetsChanged:(NSNotification *)notification
 {
-    NSSet *updatedGroups = notification.userInfo[ALAssetLibraryUpdatedAssetGroupsKey];
-    if ([updatedGroups containsObject:self.url]) {
-        [self loadImagesFromSource:self.source];
-    }
+    [self loadImagesFromSource:self.source];
 }
 
 - (void)dealloc
