@@ -35,9 +35,4 @@
  */
 @property (readonly, nonatomic) NSError *authorizationError;
 
-/**
- A reference to the hardcoded photo album that will be used for the slideshow
- */
-@property (readonly, nonatomic) RCPhotoAlbum *hardcodedAlbum;
-
 @end

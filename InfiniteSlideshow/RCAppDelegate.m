@@ -79,15 +79,4 @@ static NSString *const kHardcodedAlbumName = @"test";
     return [[self.library class] authorizationStatus] == ALAuthorizationStatusAuthorized;
 }
 
-- (RCPhotoAlbum *)hardcodedAlbum
-{
-    NSArray *matchingAlbums = [self.photoAlbums filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        return [[evaluatedObject valueForProperty:ALAssetsGroupPropertyName] isEqualToString:kHardcodedAlbumName];
-    }]];
-    switch (matchingAlbums.count) {
-        case 0: return [[RCPhotoAlbum alloc] initWithSource:[self.photoAlbums lastObject]];
-        default: return [[RCPhotoAlbum alloc] initWithSource:[matchingAlbums lastObject]];
-    }
-}
-
 @end
