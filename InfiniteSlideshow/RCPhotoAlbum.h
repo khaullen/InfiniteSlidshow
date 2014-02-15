@@ -10,6 +10,7 @@
 
 @class ALAssetsGroup;
 @class RCPhotoAlbum;
+typedef NSUInteger ALAssetsGroupType;
 
 @protocol RCPhotoAlbumDelegate <NSObject>
 
@@ -27,6 +28,10 @@
  */
 @property (nonatomic, strong) ALAssetsGroup *source;
 
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) ALAssetsGroupType type;
+@property (nonatomic, readonly) NSString *persistentID;
+@property (nonatomic, readonly) NSURL *url;
 
 /**
  Initializes a new instance of `RCPhotoAlbum` with a given `groupURL`.

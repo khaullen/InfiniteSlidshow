@@ -43,4 +43,24 @@
     }
 }
 
+- (NSString *)name
+{
+    return [self.source valueForProperty:ALAssetsGroupPropertyName];
+}
+
+- (ALAssetsGroupType)type
+{
+    return [[self.source valueForProperty:ALAssetsGroupPropertyType] unsignedIntegerValue];
+}
+
+- (NSString *)persistentID
+{
+    return [self.source valueForProperty:ALAssetsGroupPropertyPersistentID];
+}
+
+- (NSURL *)url
+{
+    return [self.source valueForProperty:ALAssetsGroupPropertyURL];
+}
+
 @end
