@@ -9,19 +9,44 @@
 #import "RCPhotoAlbum.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
+static NSString *const kRCAlertViewTitle = @"Warning";
+static NSString *const kRCAlertViewCancelButtonTitle = @"OK";
+static NSString *const kRCGroupNotFoundMessage = @"The designated photo album was not found";
+static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo library access";
+
 @interface RCPhotoAlbum ()
 
 @end
 
 @implementation RCPhotoAlbum
 
-- (instancetype)initWithSource:(ALAssetsGroup *)source
+- (instancetype)initWithLibrary:(ALAssetsLibrary *)library groupName:(NSString *)groupName
 {
     self = [super init];
     if (self) {
-        self.source = source;
+        if (library) {
+            self.library = library;
+            [library enumerateGroupsWithTypes:ALAssetsGroupPhotoStream usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+                NSString *name = [group valueForProperty:ALAssetsGroupPropertyName];
+                if ([groupName isEqualToString:name]) {
+                    self.source = group;
+                    *stop = YES;
+                } else if (!group && !*stop) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kRCAlertViewTitle message:kRCGroupNotFoundMessage delegate:self cancelButtonTitle:kRCAlertViewCancelButtonTitle otherButtonTitles:nil];
+                    [alert show];
+                }
+            } failureBlock:^(NSError *error) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kRCAlertViewTitle message:kRCUserDeniedAccessMessage delegate:self cancelButtonTitle:kRCAlertViewCancelButtonTitle otherButtonTitles:nil];
+                [alert show];
+            }];
+        }
     }
     return self;
+}
+
+- (instancetype)init
+{
+    return [self initWithLibrary:nil groupName:nil];
 }
 
 - (void)setSource:(ALAssetsGroup *)source

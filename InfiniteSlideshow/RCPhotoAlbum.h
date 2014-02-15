@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class ALAssetsLibrary;
 @class ALAssetsGroup;
 @class RCPhotoAlbum;
 typedef NSUInteger ALAssetsGroupType;
@@ -33,13 +34,10 @@ typedef NSUInteger ALAssetsGroupType;
 @property (nonatomic, readonly) NSString *persistentID;
 @property (nonatomic, readonly) NSURL *url;
 
-/**
- Initializes a new instance of `RCPhotoAlbum` with a given `groupURL`.
- 
- @param groupURL The URL to be used when fetching photos from the photo library.
- @return A newly created photo album object initialized with the given group URL.
- */
-- (instancetype)initWithSource:(ALAssetsGroup *)source;
+- (instancetype)initWithLibrary:(ALAssetsLibrary *)library groupName:(NSString *)name;
+
+@property (nonatomic, strong) ALAssetsLibrary *library;
+
 @property (nonatomic, weak) id<RCPhotoAlbumDelegate> delegate;
 
 @end
