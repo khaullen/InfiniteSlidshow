@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class ALAssetsGroup;
+@class RCPhotoAlbum;
+
+@protocol RCPhotoAlbumDelegate <NSObject>
+
+- (void)photoAlbum:(RCPhotoAlbum *)album didLoadNewPhotos:(NSArray *)photos;
+
+@end
 
 /**
  Instances of `RCPhotoAlbum` provide the model layer for accessing a group of photos as an array of `UIImage` objects.
@@ -32,5 +39,6 @@
  @return A newly created photo album object initialized with the given group URL.
  */
 - (instancetype)initWithSource:(ALAssetsGroup *)source;
+@property (nonatomic, weak) id<RCPhotoAlbumDelegate> delegate;
 
 @end
