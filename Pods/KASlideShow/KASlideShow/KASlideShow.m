@@ -70,18 +70,11 @@ typedef NS_ENUM(NSInteger, KASlideShowSlideMode) {
     
     _topImageView = [[UIImageView alloc] initWithFrame:self.bounds];
     _bottomImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    _topImageView.translatesAutoresizingMaskIntoConstraints = _bottomImageView.translatesAutoresizingMaskIntoConstraints = NO;
     _topImageView.clipsToBounds = _bottomImageView.clipsToBounds = YES;
     [self setImagesContentMode:UIViewContentModeScaleAspectFit];
     
     [self addSubview:_bottomImageView];
     [self addSubview:_topImageView];
-    
-    NSDictionary *views = NSDictionaryOfVariableBindings(_bottomImageView, _topImageView);
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[_bottomImageView]|" options:0 metrics:nil views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_bottomImageView]|" options:0 metrics:nil views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[_topImageView]|" options:0 metrics:nil views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_topImageView]|" options:0 metrics:nil views:views]];
 }
 
 - (void) setImagesContentMode:(UIViewContentMode)mode
@@ -93,6 +86,16 @@ typedef NS_ENUM(NSInteger, KASlideShowSlideMode) {
 - (UIViewContentMode) imagesContentMode
 {
     return _topImageView.contentMode;
+}
+
+- (void) setImagesAutoresizingMask:(UIViewAutoresizing)imagesAutoresizingMask
+{
+    _topImageView.autoresizingMask = _bottomImageView.autoresizingMask = imagesAutoresizingMask;
+}
+
+- (UIViewAutoresizing) autoresizingMask
+{
+    return _topImageView.autoresizingMask;
 }
 
 - (void) addGesture:(KASlideShowGestureType)gestureType

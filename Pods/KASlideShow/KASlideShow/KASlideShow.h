@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, KASlideShowGestureType) {
 @property  float transitionDuration;
 @property  (atomic) KASlideShowTransitionType transitionType;
 @property  (atomic) UIViewContentMode imagesContentMode;
+@property  (nonatomic) UIViewAutoresizing imagesAutoresizingMask;
 @property  (strong,nonatomic) NSMutableArray * images;
 
 - (void) addImagesFromResources:(NSArray *) names;
