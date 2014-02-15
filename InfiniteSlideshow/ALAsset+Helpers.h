@@ -10,4 +10,6 @@
 
 @interface ALAsset (Helpers)
 
+- (UIImage *)image;
+
 @end

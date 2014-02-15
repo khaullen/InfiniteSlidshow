@@ -10,4 +10,11 @@
 
 @implementation ALAsset (Helpers)
 
+- (UIImage *)image
+{
+    ALAssetRepresentation *rep = [self defaultRepresentation];
+    CGImageRef imageRef = rep ? [rep fullScreenImage] : [self aspectRatioThumbnail];
+    return [UIImage imageWithCGImage:imageRef];
+}
+
 @end
