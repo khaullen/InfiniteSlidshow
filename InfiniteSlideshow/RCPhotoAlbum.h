@@ -37,6 +37,7 @@ typedef NSUInteger ALAssetsGroupType;
 - (instancetype)initWithLibrary:(ALAssetsLibrary *)library groupName:(NSString *)name;
 
 @property (nonatomic, strong) ALAssetsLibrary *library;
+@property (strong, nonatomic) NSMutableArray *loadedPhotos;
 
 @property (nonatomic, weak) id<RCPhotoAlbumDelegate> delegate;
 

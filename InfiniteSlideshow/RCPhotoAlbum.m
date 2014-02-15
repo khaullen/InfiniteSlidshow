@@ -16,8 +16,6 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 
 @interface RCPhotoAlbum ()
 
-@property (strong, nonatomic) NSMutableDictionary *loadedPhotos;
-
 - (void)assetsChanged:(NSNotification *)notification;
 - (void)loadImagesFromSource:(ALAssetsGroup *)source;
 
@@ -31,7 +29,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 {
     self = [super init];
     if (self) {
-        self.loadedPhotos = [NSMutableDictionary new];
+        self.loadedPhotos = [NSMutableArray new];
         if (library) {
             self.library = library;
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(assetsChanged:) name:ALAssetsLibraryChangedNotification object:library];
@@ -75,13 +73,18 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
         if (result) {
             if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
                 NSURL *url = [result valueForProperty:ALAssetPropertyAssetURL];
-                if (![self.loadedPhotos.allKeys containsObject:url]) {
+                BOOL alreadyProcessed = [self.loadedPhotos indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+                    // Warning: this operation is linear in [self.loadedPhotos count]
+                    // Consider adding a seperate NSSet of NSURLs to make this check constant time
+                    return [[obj valueForProperty:ALAssetPropertyAssetURL] isEqual:url];
+                }] != NSNotFound;
+                if (!alreadyProcessed) {
                     ALAssetRepresentation *rep = [result defaultRepresentation];
                     CGImageRef imageRef = rep ? [rep fullScreenImage] : [result aspectRatioThumbnail];
                     UIImage *image = [UIImage imageWithCGImage:imageRef];
                     if (image) {
                         [photos addObject:image];
-                        [self.loadedPhotos setObject:result forKey:url];
+                        [self.loadedPhotos addObject:result];
                     }
                 }
             }
