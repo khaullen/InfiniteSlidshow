@@ -8,7 +8,6 @@
 
 #import "RCViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "KASlideShow.h"
 
 static NSString *const kRCHardcodedGroupName = @"Hacker School";
 
@@ -17,6 +16,14 @@ static NSString *const kRCHardcodedGroupName = @"Hacker School";
 @end
 
 @implementation RCViewController
+
+#pragma mark - Initialization
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.slideShowView.dataSource = self;
+}
 
 - (void)viewDidLoad
 {
@@ -41,12 +48,26 @@ static NSString *const kRCHardcodedGroupName = @"Hacker School";
     }
 }
 
+#pragma mark - RCPhotoAlbumDelegate
+
 - (void)photoAlbum:(RCPhotoAlbum *)album didLoadNewPhotos:(NSArray *)photos
 {
     for (UIImage *image in photos) {
         [self.slideShowView addImage:image];
     }
     [self.slideShowView start];
+}
+
+#pragma mark - KASlideShowDataSource
+
+- (UIImage *)slideShow:(KASlideShow *)slideShow nextImageForPosition:(KASlideShowPosition)position
+{
+    return nil;
+}
+
+- (UIImage *)slideShow:(KASlideShow *)slideShow previousImageForPosition:(KASlideShowPosition)position
+{
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning

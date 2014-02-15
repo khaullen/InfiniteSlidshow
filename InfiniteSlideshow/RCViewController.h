@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RCPhotoAlbum.h"
+#import "KASlideShow.h"
 
-@class KASlideShow;
-
-@interface RCViewController : UIViewController <RCPhotoAlbumDelegate>
+@interface RCViewController : UIViewController <RCPhotoAlbumDelegate, KASlideShowDataSource>
 
 @property (weak, nonatomic) IBOutlet KASlideShow *slideShowView;
 
