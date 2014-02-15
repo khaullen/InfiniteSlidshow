@@ -10,7 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "KASlideShow.h"
 
-static NSString *const kRCHardcodedGroupName = @"Patterns";
+static NSString *const kRCHardcodedGroupName = @"Hacker School";
 
 @interface RCViewController ()
 
