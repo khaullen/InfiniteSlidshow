@@ -1,3 +1,3 @@
 platform :ios
 
-pod 'KASlideShow'
+pod 'KASlideShow', :path => '~/Developer/KASlideShow'

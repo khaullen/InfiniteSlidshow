@@ -1,10 +1,14 @@
 PODS:
-  - KASlideShow (1.1)
+  - KASlideShow (2.0.0)
 
 DEPENDENCIES:
-  - KASlideShow
+  - KASlideShow (from `~/Developer/KASlideShow`)
+
+EXTERNAL SOURCES:
+  KASlideShow:
+    :path: ~/Developer/KASlideShow
 
 SPEC CHECKSUMS:
-  KASlideShow: 5bdad2464745f99b356daae8c13be91057e106b1
+  KASlideShow: d4325a8c2f8e68cd4347d4e50c10b8482aa1a33c
 
-COCOAPODS: 0.27.1
+COCOAPODS: 0.29.0
