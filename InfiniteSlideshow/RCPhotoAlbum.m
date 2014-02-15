@@ -16,7 +16,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 
 @interface RCPhotoAlbum ()
 
-@property (strong, nonatomic) NSMutableArray *loadedPhotos;
+@property (strong, nonatomic) NSMutableDictionary *loadedPhotos;
 
 - (void)assetsChanged:(NSNotification *)notification;
 - (void)loadImagesFromSource:(ALAssetsGroup *)source;
@@ -31,7 +31,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 {
     self = [super init];
     if (self) {
-        self.loadedPhotos = [NSMutableArray new];
+        self.loadedPhotos = [NSMutableDictionary new];
         if (library) {
             self.library = library;
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(assetsChanged:) name:ALAssetsLibraryChangedNotification object:library];
@@ -74,13 +74,14 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
     [source enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
         if (result) {
             if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
-                if (![self.loadedPhotos containsObject:result]) {
+                NSURL *url = [result valueForProperty:ALAssetPropertyAssetURL];
+                if (![self.loadedPhotos.allKeys containsObject:url]) {
                     ALAssetRepresentation *rep = [result defaultRepresentation];
                     CGImageRef imageRef = rep ? [rep fullScreenImage] : [result aspectRatioThumbnail];
                     UIImage *image = [UIImage imageWithCGImage:imageRef];
                     if (image) {
                         [photos addObject:image];
-                        [self.loadedPhotos addObject:result];
+                        [self.loadedPhotos setObject:result forKey:url];
                     }
                 }
             }
