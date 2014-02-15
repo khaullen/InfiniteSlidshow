@@ -8,7 +8,6 @@
 
 #import "RCViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "RCPhotoAlbum.h"
 #import "KASlideShow.h"
 
 static NSString *const kRCHardcodedGroupName = @"Patterns";
@@ -53,9 +52,16 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 {
     if (_photoAlbum != photoAlbum) {
         _photoAlbum = photoAlbum;
-        self.slideShowView.images = [photoAlbum.photos mutableCopy];
-        [self.slideShowView start];
+        photoAlbum.delegate = self;
     }
+}
+
+- (void)photoAlbum:(RCPhotoAlbum *)album didLoadNewPhotos:(NSArray *)photos
+{
+    for (UIImage *image in photos) {
+        [self.slideShowView addImage:image];
+    }
+    [self.slideShowView start];
 }
 
 - (void)didReceiveMemoryWarning

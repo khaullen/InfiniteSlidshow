@@ -11,8 +11,6 @@
 
 @interface RCPhotoAlbum ()
 
-@property (nonatomic, readwrite) NSArray *photos;
-
 @end
 
 @implementation RCPhotoAlbum
@@ -30,7 +28,6 @@
 {
     if (_source != source) {
         _source = source;
-        self.photos = nil;
         NSMutableArray *photos = [NSMutableArray new];
         [source enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
             if (result) {
@@ -42,7 +39,7 @@
                 }
             }
         }];
-        self.photos = photos;
+        [self.delegate photoAlbum:self didLoadNewPhotos:photos];
     }
 }
 
