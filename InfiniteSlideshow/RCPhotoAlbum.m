@@ -68,11 +68,13 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 
 - (void)loadAssetsFromSource:(ALAssetsGroup *)source
 {
+    NSMutableArray *assets = [NSMutableArray new];
     [source enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
         if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
-            [self.loadedAssets addObject:result];
+            [assets addObject:result];
         }
     }];
+    self.loadedAssets = assets;
 }
 
 #pragma mark - Properties
