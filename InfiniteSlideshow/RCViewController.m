@@ -44,7 +44,14 @@ static NSString *const kRCHardcodedGroupName = @"Grandpa";
 
 - (UIImage *)slideShow:(KASlideShow *)slideShow imageForPosition:(KASlideShowPosition)position
 {
-    NSUInteger index = (self.index + position) % [self.photoAlbum.loadedAssets count];
+    NSUInteger index;
+    switch ([self.photoAlbum.loadedAssets count]) {
+        case 0: return nil;
+        case 1: index = 0;
+            break;
+        default: index = (self.index + position) % [self.photoAlbum.loadedAssets count];
+            break;
+    }
     if (!position) self.index = index;  // Update self.index to the count-adjusted index to prevent counting to infinity
     ALAsset *asset = [self.photoAlbum.loadedAssets objectAtIndex:index];
     return [asset image];
