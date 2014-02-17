@@ -8,10 +8,13 @@
 
 #import "RCViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "ALAsset+Helpers.h"
 
-static NSString *const kRCHardcodedGroupName = @"Hacker School";
+static NSString *const kRCHardcodedGroupName = @"Patterns";
 
 @interface RCViewController ()
+
+@property (nonatomic, assign) NSUInteger index;
 
 @end
 
@@ -19,17 +22,14 @@ static NSString *const kRCHardcodedGroupName = @"Hacker School";
 
 #pragma mark - Initialization
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    self.slideShowView.dataSource = self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.slideShowView.imagesContentMode = UIViewContentModeScaleAspectFit;
+    self.slideShowView.dataSource = self;
+    self.slideShowView.delegate = self;
+    [self.slideShowView start];
 
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     self.photoAlbum = [[RCPhotoAlbum alloc] initWithLibrary:library groupName:kRCHardcodedGroupName];
@@ -40,34 +40,26 @@ static NSString *const kRCHardcodedGroupName = @"Hacker School";
     return UIInterfaceOrientationLandscapeRight;
 }
 
-- (void)setPhotoAlbum:(RCPhotoAlbum *)photoAlbum
-{
-    if (_photoAlbum != photoAlbum) {
-        _photoAlbum = photoAlbum;
-        photoAlbum.delegate = self;
-    }
-}
-
-#pragma mark - RCPhotoAlbumDelegate
-
-- (void)photoAlbum:(RCPhotoAlbum *)album didLoadNewPhotos:(NSArray *)photos
-{
-    for (UIImage *image in photos) {
-        [self.slideShowView addImage:image];
-    }
-    [self.slideShowView start];
-}
-
 #pragma mark - KASlideShowDataSource
 
-- (UIImage *)slideShow:(KASlideShow *)slideShow nextImageForPosition:(KASlideShowPosition)position
+- (UIImage *)slideShow:(KASlideShow *)slideShow imageForPosition:(KASlideShowPosition)position
 {
-    return nil;
+    NSUInteger index = (self.index + position) % [self.photoAlbum.loadedAssets count];
+    if (!position) self.index = index;  // Update self.index to the count-adjusted index to prevent counting to infinity
+    ALAsset *asset = [self.photoAlbum.loadedAssets objectAtIndex:index];
+    return [asset image];
 }
 
-- (UIImage *)slideShow:(KASlideShow *)slideShow previousImageForPosition:(KASlideShowPosition)position
+#pragma mark - KASlideShowDelegate
+
+- (void)kaSlideShowWillShowNext:(KASlideShow *)slideShow
 {
-    return nil;
+    if ([slideShow isEqual:self.slideShowView]) self.index++;
+}
+
+- (void)kaSlideShowWillShowPrevious:(KASlideShow *)slideShow
+{
+    if ([slideShow isEqual:self.slideShowView]) self.index--;
 }
 
 - (void)didReceiveMemoryWarning

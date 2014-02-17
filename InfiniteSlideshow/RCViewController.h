@@ -10,7 +10,7 @@
 #import "RCPhotoAlbum.h"
 #import "KASlideShow.h"
 
-@interface RCViewController : UIViewController <RCPhotoAlbumDelegate, KASlideShowDataSource>
+@interface RCViewController : UIViewController <KASlideShowDataSource, KASlideShowDelegate>
 
 @property (weak, nonatomic) IBOutlet KASlideShow *slideShowView;
 

@@ -17,7 +17,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 @interface RCPhotoAlbum ()
 
 - (void)assetsChanged:(NSNotification *)notification;
-- (void)loadImagesFromSource:(ALAssetsGroup *)source;
+- (void)loadAssetsFromSource:(ALAssetsGroup *)source;
 
 @end
 
@@ -29,7 +29,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 {
     self = [super init];
     if (self) {
-        self.loadedPhotos = [NSMutableArray new];
+        self.loadedAssets = [NSMutableArray new];
         if (library) {
             self.library = library;
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(assetsChanged:) name:ALAssetsLibraryChangedNotification object:library];
@@ -62,35 +62,17 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 {
     if (_source != source) {
         _source = source;
-        [self loadImagesFromSource:source];
+        [self loadAssetsFromSource:source];
     }
 }
 
-- (void)loadImagesFromSource:(ALAssetsGroup *)source
+- (void)loadAssetsFromSource:(ALAssetsGroup *)source
 {
-    NSMutableArray *photos = [NSMutableArray new];
     [source enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
-        if (result) {
-            if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
-                NSURL *url = [result valueForProperty:ALAssetPropertyAssetURL];
-                BOOL alreadyProcessed = [self.loadedPhotos indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-                    // Warning: this operation is linear in [self.loadedPhotos count]
-                    // Consider adding a seperate NSSet of NSURLs to make this check constant time
-                    return [[obj valueForProperty:ALAssetPropertyAssetURL] isEqual:url];
-                }] != NSNotFound;
-                if (!alreadyProcessed) {
-                    ALAssetRepresentation *rep = [result defaultRepresentation];
-                    CGImageRef imageRef = rep ? [rep fullScreenImage] : [result aspectRatioThumbnail];
-                    UIImage *image = [UIImage imageWithCGImage:imageRef];
-                    if (image) {
-                        [photos addObject:image];
-                        [self.loadedPhotos addObject:result];
-                    }
-                }
-            }
+        if ([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
+            [self.loadedAssets addObject:result];
         }
     }];
-    [self.delegate photoAlbum:self didLoadNewPhotos:photos];
 }
 
 #pragma mark - Properties
@@ -119,7 +101,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 
 - (void)assetsChanged:(NSNotification *)notification
 {
-    [self loadImagesFromSource:self.source];
+    [self loadAssetsFromSource:self.source];
 }
 
 - (void)dealloc
