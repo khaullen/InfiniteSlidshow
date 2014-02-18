@@ -27,6 +27,7 @@ static NSString *const kRCHardcodedGroupName = @"Grandpa";
     [super viewDidLoad];
     
     self.slideShowView.imagesContentMode = UIViewContentModeScaleAspectFit;
+    self.slideShowView.delay = 30.f;
     self.slideShowView.dataSource = self;
     self.slideShowView.delegate = self;
     [self.slideShowView start];
