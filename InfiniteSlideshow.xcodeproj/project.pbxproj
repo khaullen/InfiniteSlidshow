@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B4373D41882430D00D7F2D7 /* InfiniteSlideshow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteSlideshow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4373D41882430D00D7F2D7 /* Slideshow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slideshow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4373D71882430D00D7F2D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3B4373D91882430D00D7F2D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3B4373DB1882430D00D7F2D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -107,7 +107,7 @@
 		3B4373D51882430D00D7F2D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B4373D41882430D00D7F2D7 /* InfiniteSlideshow.app */,
+				3B4373D41882430D00D7F2D7 /* Slideshow.app */,
 				3B4373F51882430E00D7F2D7 /* InfiniteSlideshowTests.xctest */,
 			);
 			name = Products;
@@ -192,7 +192,7 @@
 			);
 			name = InfiniteSlideshow;
 			productName = "Infinite Slideshow";
-			productReference = 3B4373D41882430D00D7F2D7 /* InfiniteSlideshow.app */;
+			productReference = 3B4373D41882430D00D7F2D7 /* Slideshow.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3B4373F41882430E00D7F2D7 /* InfiniteSlideshowTests */ = {
@@ -446,7 +446,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfiniteSlideshow/InfiniteSlideshow-Prefix.pch";
 				INFOPLIST_FILE = "InfiniteSlideshow/InfiniteSlideshow-Info.plist";
-				PRODUCT_NAME = InfiniteSlideshow;
+				PRODUCT_NAME = Slideshow;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -460,7 +460,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfiniteSlideshow/InfiniteSlideshow-Prefix.pch";
 				INFOPLIST_FILE = "InfiniteSlideshow/InfiniteSlideshow-Info.plist";
-				PRODUCT_NAME = InfiniteSlideshow;
+				PRODUCT_NAME = Slideshow;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
