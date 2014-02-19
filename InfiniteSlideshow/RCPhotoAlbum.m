@@ -29,7 +29,6 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
 {
     self = [super init];
     if (self) {
-        self.loadedAssets = [NSMutableArray new];
         if (library) {
             self.library = library;
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(assetsChanged:) name:ALAssetsLibraryChangedNotification object:library];

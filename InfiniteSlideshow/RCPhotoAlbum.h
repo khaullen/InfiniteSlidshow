@@ -30,6 +30,6 @@ typedef NSUInteger ALAssetsGroupType;
 - (instancetype)initWithLibrary:(ALAssetsLibrary *)library groupName:(NSString *)name;
 
 @property (nonatomic, strong) ALAssetsLibrary *library;
-@property (nonatomic, strong) NSMutableArray *loadedAssets;
+@property (nonatomic, strong) NSArray *loadedAssets;
 
 @end
