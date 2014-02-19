@@ -10,7 +10,15 @@
 
 @class ALAssetsLibrary;
 @class ALAssetsGroup;
+@class RCPhotoAlbum;
 typedef NSUInteger ALAssetsGroupType;
+
+@protocol RCPhotoAlbumDelegate <NSObject>
+
+@optional
+- (void)photoAlbumDidUpdate:(RCPhotoAlbum *)album;
+
+@end
 
 /**
  Instances of `RCPhotoAlbum` provide the model layer for accessing a group of photos as an array of `UIImage` objects.
@@ -31,5 +39,7 @@ typedef NSUInteger ALAssetsGroupType;
 
 @property (nonatomic, strong) ALAssetsLibrary *library;
 @property (nonatomic, strong) NSArray *loadedAssets;
+
+@property (nonatomic, weak) id<RCPhotoAlbumDelegate> delegate;
 
 @end

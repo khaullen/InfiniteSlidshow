@@ -30,10 +30,10 @@ static NSString *const kRCHardcodedGroupName = @"Grandpa";
     self.slideShowView.delay = 30.f;
     self.slideShowView.dataSource = self;
     self.slideShowView.delegate = self;
-    [self.slideShowView start];
 
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     self.photoAlbum = [[RCPhotoAlbum alloc] initWithLibrary:library groupName:kRCHardcodedGroupName];
+    self.photoAlbum.delegate = self;
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
@@ -68,6 +68,13 @@ static NSString *const kRCHardcodedGroupName = @"Grandpa";
 - (void)kaSlideShowWillShowPrevious:(KASlideShow *)slideShow
 {
     if ([slideShow isEqual:self.slideShowView]) self.index--;
+}
+
+#pragma mark - RCPhotoAlbumDelegate
+
+- (void)photoAlbumDidUpdate:(RCPhotoAlbum *)album
+{
+    if (self.slideShowView.state == KASlideShowStateStopped && album.loadedAssets.count > 0) [self.slideShowView start];
 }
 
 - (void)didReceiveMemoryWarning

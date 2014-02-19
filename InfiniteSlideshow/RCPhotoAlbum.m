@@ -76,6 +76,12 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
     self.loadedAssets = assets;
 }
 
+- (void)setLoadedAssets:(NSArray *)loadedAssets
+{
+    _loadedAssets = loadedAssets;
+    if ([self.delegate respondsToSelector:@selector(photoAlbumDidUpdate:)]) [self.delegate photoAlbumDidUpdate:self];
+}
+
 #pragma mark - Properties
 
 - (NSString *)name
