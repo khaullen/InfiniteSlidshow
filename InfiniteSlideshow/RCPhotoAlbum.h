@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ALAssetsLibrary;
-@class ALAssetsGroup;
-@class RCPhotoAlbum;
+@class ALAssetsLibrary, ALAssetsGroup, RCPhotoAlbum;
 typedef NSUInteger ALAssetsGroupType;
 
 @protocol RCPhotoAlbumDelegate <NSObject>
