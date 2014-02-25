@@ -19,7 +19,7 @@ typedef NSUInteger ALAssetsGroupType;
 @end
 
 /**
- Instances of `RCPhotoAlbum` provide the model layer for accessing a group of photos as an array of `UIImage` objects.
+ Instances of `RCPhotoAlbum` provide the model layer for accessing a group of photos.
  */
 @interface RCPhotoAlbum : NSObject
 
