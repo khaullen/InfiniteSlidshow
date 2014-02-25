@@ -10,7 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "ALAsset+Helpers.h"
 
-static NSString *const kRCHardcodedGroupName = @"Grandpa";
+static NSString *const kRCHardcodedGroupName = @"Internet";
 
 @interface RCViewController ()
 

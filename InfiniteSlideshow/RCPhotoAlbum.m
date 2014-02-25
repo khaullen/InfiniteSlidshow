@@ -32,7 +32,7 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
         if (library) {
             self.library = library;
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(assetsChanged:) name:ALAssetsLibraryChangedNotification object:library];
-            [library enumerateGroupsWithTypes:ALAssetsGroupPhotoStream usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+            [library enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
                 NSString *name = [group valueForProperty:ALAssetsGroupPropertyName];
                 if ([groupName isEqualToString:name]) {
                     self.source = group;
