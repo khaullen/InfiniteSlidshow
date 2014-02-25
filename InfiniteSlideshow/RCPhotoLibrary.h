@@ -12,8 +12,8 @@
 
 @interface RCPhotoLibrary : NSObject
 
-- (instancetype)initWithLibrary:(ALAssetsLibrary *)library;
-
 @property (nonatomic, readonly) ALAssetsLibrary *library;
+
+- (instancetype)initWithLibrary:(ALAssetsLibrary *)library;
 
 @end
