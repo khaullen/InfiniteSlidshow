@@ -7,17 +7,6 @@
 //
 
 #import "RCAppDelegate.h"
-#import <AssetsLibrary/AssetsLibrary.h>
-#import "RCPhotoAlbum.h"
-
-static NSString *const kHardcodedAlbumName = @"test";
-
-@interface RCAppDelegate ()
-
-@property (readwrite, nonatomic) NSArray *photoAlbums;
-@property (readwrite, nonatomic) NSError *authorizationError;
-
-@end
 
 @implementation RCAppDelegate
 
@@ -54,29 +43,6 @@ static NSString *const kHardcodedAlbumName = @"test";
 - (void)applicationWillTerminate:(UIApplication *)application
 {
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-#pragma mark - Custom code
-
-- (void)setLibrary:(ALAssetsLibrary *)library
-{
-    if (_library != library) {
-        _library = library;
-        self.photoAlbums = nil;
-        self.authorizationError = nil;
-        NSMutableArray *groups = [NSMutableArray new];
-        [library enumerateGroupsWithTypes:ALAssetsGroupPhotoStream usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-            if (group) [groups addObject:group];
-        } failureBlock:^(NSError *error) {
-            self.authorizationError = error;
-        }];
-        self.photoAlbums = groups;
-    }
-}
-
-- (BOOL)isAuthorized
-{
-    return [[self.library class] authorizationStatus] == ALAuthorizationStatusAuthorized;
 }
 
 @end

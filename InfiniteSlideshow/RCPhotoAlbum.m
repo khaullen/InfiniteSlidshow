@@ -82,6 +82,11 @@ static NSString *const kRCUserDeniedAccessMessage = @"This app requires photo li
     if ([self.delegate respondsToSelector:@selector(photoAlbumDidUpdate:)]) [self.delegate photoAlbumDidUpdate:self];
 }
 
+- (BOOL)isAuthorized
+{
+    return [[self.library class] authorizationStatus] == ALAuthorizationStatusAuthorized;
+}
+
 #pragma mark - Properties
 
 - (NSString *)name

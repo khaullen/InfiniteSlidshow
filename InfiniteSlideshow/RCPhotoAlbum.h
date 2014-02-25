@@ -35,8 +35,20 @@ typedef NSUInteger ALAssetsGroupType;
 
 - (instancetype)initWithLibrary:(ALAssetsLibrary *)library groupName:(NSString *)name;
 
+/**
+ The `ALAssetsLibrary` instance used to fetch photos from the camera roll and photostream
+ */
 @property (nonatomic, strong) ALAssetsLibrary *library;
+
+/**
+ An array of photos loaded from the corresponding album in the `ALAssetsLibrary` property `library`
+ */
 @property (nonatomic, strong) NSArray *loadedAssets;
+
+/**
+ A boolean value specifying whether the app is authorized to access the photo library
+ */
+@property (readonly, nonatomic, getter = isAuthorized) BOOL authorized;
 
 @property (nonatomic, weak) id<RCPhotoAlbumDelegate> delegate;
 
