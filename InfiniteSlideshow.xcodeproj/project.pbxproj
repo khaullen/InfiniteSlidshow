@@ -131,12 +131,8 @@
 				3B4373E61882430D00D7F2D7 /* RCAppDelegate.h */,
 				3B4373E71882430D00D7F2D7 /* RCAppDelegate.m */,
 				3B4373E91882430D00D7F2D7 /* Main.storyboard */,
-				3B4373EC1882430D00D7F2D7 /* RCViewController.h */,
-				3B4373ED1882430D00D7F2D7 /* RCViewController.m */,
-				3BFA70111887A4D2000C5C29 /* RCPhotoAlbum.h */,
-				3BFA70121887A4D2000C5C29 /* RCPhotoAlbum.m */,
-				3BD3E31418B00F4200C4CD4B /* ALAsset+Helpers.h */,
-				3BD3E31518B00F4200C4CD4B /* ALAsset+Helpers.m */,
+				3B51BB4A18BC5034000E37C6 /* Controller */,
+				3B51BB4918BC5025000E37C6 /* Model */,
 				3B4373EF1882430D00D7F2D7 /* Images.xcassets */,
 				3B4373DE1882430D00D7F2D7 /* Supporting Files */,
 			);
@@ -171,6 +167,26 @@
 				3B4373FF1882430E00D7F2D7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B51BB4918BC5025000E37C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BFA70111887A4D2000C5C29 /* RCPhotoAlbum.h */,
+				3BFA70121887A4D2000C5C29 /* RCPhotoAlbum.m */,
+				3BD3E31418B00F4200C4CD4B /* ALAsset+Helpers.h */,
+				3BD3E31518B00F4200C4CD4B /* ALAsset+Helpers.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3B51BB4A18BC5034000E37C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B4373EC1882430D00D7F2D7 /* RCViewController.h */,
+				3B4373ED1882430D00D7F2D7 /* RCViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
