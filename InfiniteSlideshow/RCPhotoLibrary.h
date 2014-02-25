@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class ALAssetsLibrary;
+
 @interface RCPhotoLibrary : NSObject
+
+- (instancetype)initWithLibrary:(ALAssetsLibrary *)library;
+
+@property (nonatomic, readonly) ALAssetsLibrary *library;
 
 @end
