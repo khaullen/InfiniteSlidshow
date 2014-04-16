@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Red Cup. All rights reserved.
 //
 
-#import "RCViewController.h"
+#import "RCSlideshowViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "ALAsset+Helpers.h"
 
 static NSString *const kRCHardcodedGroupName = @"Internet";
 
-@interface RCViewController ()
+@interface RCSlideshowViewController ()
 
 @property (nonatomic, assign) NSUInteger index;
 
 @end
 
-@implementation RCViewController
+@implementation RCSlideshowViewController
 
 #pragma mark - Initialization
 

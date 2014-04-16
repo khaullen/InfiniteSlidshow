@@ -15,7 +15,7 @@
 		3B4373E41882430D00D7F2D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4373E31882430D00D7F2D7 /* main.m */; };
 		3B4373E81882430D00D7F2D7 /* RCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4373E71882430D00D7F2D7 /* RCAppDelegate.m */; };
 		3B4373EB1882430D00D7F2D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B4373E91882430D00D7F2D7 /* Main.storyboard */; };
-		3B4373EE1882430D00D7F2D7 /* RCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4373ED1882430D00D7F2D7 /* RCViewController.m */; };
+		3B4373EE1882430D00D7F2D7 /* RCSlideshowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4373ED1882430D00D7F2D7 /* RCSlideshowViewController.m */; };
 		3B4373F01882430D00D7F2D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B4373EF1882430D00D7F2D7 /* Images.xcassets */; };
 		3B4373F71882430E00D7F2D7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4373F61882430E00D7F2D7 /* XCTest.framework */; };
 		3B4373F81882430E00D7F2D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4373D71882430D00D7F2D7 /* Foundation.framework */; };
@@ -24,6 +24,8 @@
 		3B4374031882430E00D7F2D7 /* Infinite_SlideshowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4374021882430E00D7F2D7 /* Infinite_SlideshowTests.m */; };
 		3B51BB4D18BC5084000E37C6 /* RCPhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B51BB4C18BC5084000E37C6 /* RCPhotoLibrary.m */; };
 		3B51BB4E18BC5084000E37C6 /* RCPhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B51BB4C18BC5084000E37C6 /* RCPhotoLibrary.m */; };
+		3B694B4D18FE0C0500B5B52E /* RCLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B694B4C18FE0C0500B5B52E /* RCLibraryViewController.m */; };
+		3B694B4E18FE0C0500B5B52E /* RCLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B694B4C18FE0C0500B5B52E /* RCLibraryViewController.m */; };
 		3BD3E31618B00F4200C4CD4B /* ALAsset+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3E31518B00F4200C4CD4B /* ALAsset+Helpers.m */; };
 		3BD3E31718B00F4200C4CD4B /* ALAsset+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3E31518B00F4200C4CD4B /* ALAsset+Helpers.m */; };
 		3BFA70131887A4D2000C5C29 /* RCPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA70121887A4D2000C5C29 /* RCPhotoAlbum.m */; };
@@ -53,8 +55,8 @@
 		3B4373E61882430D00D7F2D7 /* RCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCAppDelegate.h; sourceTree = "<group>"; };
 		3B4373E71882430D00D7F2D7 /* RCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCAppDelegate.m; sourceTree = "<group>"; };
 		3B4373EA1882430D00D7F2D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3B4373EC1882430D00D7F2D7 /* RCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCViewController.h; sourceTree = "<group>"; };
-		3B4373ED1882430D00D7F2D7 /* RCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCViewController.m; sourceTree = "<group>"; };
+		3B4373EC1882430D00D7F2D7 /* RCSlideshowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCSlideshowViewController.h; sourceTree = "<group>"; };
+		3B4373ED1882430D00D7F2D7 /* RCSlideshowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCSlideshowViewController.m; sourceTree = "<group>"; };
 		3B4373EF1882430D00D7F2D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3B4373F51882430E00D7F2D7 /* InfiniteSlideshowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfiniteSlideshowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4373F61882430E00D7F2D7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -63,6 +65,8 @@
 		3B4374021882430E00D7F2D7 /* Infinite_SlideshowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Infinite_SlideshowTests.m; sourceTree = "<group>"; };
 		3B51BB4B18BC5084000E37C6 /* RCPhotoLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPhotoLibrary.h; sourceTree = "<group>"; };
 		3B51BB4C18BC5084000E37C6 /* RCPhotoLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPhotoLibrary.m; sourceTree = "<group>"; };
+		3B694B4B18FE0C0500B5B52E /* RCLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLibraryViewController.h; sourceTree = "<group>"; };
+		3B694B4C18FE0C0500B5B52E /* RCLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLibraryViewController.m; sourceTree = "<group>"; };
 		3BD3E31418B00F4200C4CD4B /* ALAsset+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAsset+Helpers.h"; sourceTree = "<group>"; };
 		3BD3E31518B00F4200C4CD4B /* ALAsset+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+Helpers.m"; sourceTree = "<group>"; };
 		3BFA70111887A4D2000C5C29 /* RCPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPhotoAlbum.h; sourceTree = "<group>"; };
@@ -189,8 +193,10 @@
 		3B51BB4A18BC5034000E37C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3B4373EC1882430D00D7F2D7 /* RCViewController.h */,
-				3B4373ED1882430D00D7F2D7 /* RCViewController.m */,
+				3B694B4B18FE0C0500B5B52E /* RCLibraryViewController.h */,
+				3B694B4C18FE0C0500B5B52E /* RCLibraryViewController.m */,
+				3B4373EC1882430D00D7F2D7 /* RCSlideshowViewController.h */,
+				3B4373ED1882430D00D7F2D7 /* RCSlideshowViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -328,11 +334,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B694B4D18FE0C0500B5B52E /* RCLibraryViewController.m in Sources */,
 				3B4373E41882430D00D7F2D7 /* main.m in Sources */,
 				3BFA70131887A4D2000C5C29 /* RCPhotoAlbum.m in Sources */,
 				3B4373E81882430D00D7F2D7 /* RCAppDelegate.m in Sources */,
 				3B51BB4D18BC5084000E37C6 /* RCPhotoLibrary.m in Sources */,
-				3B4373EE1882430D00D7F2D7 /* RCViewController.m in Sources */,
+				3B4373EE1882430D00D7F2D7 /* RCSlideshowViewController.m in Sources */,
 				3BD3E31618B00F4200C4CD4B /* ALAsset+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B4374031882430E00D7F2D7 /* Infinite_SlideshowTests.m in Sources */,
+				3B694B4E18FE0C0500B5B52E /* RCLibraryViewController.m in Sources */,
 				3BFA701618881609000C5C29 /* RCPhotoAlbum_Tests.m in Sources */,
 				3BFA70141887A4D2000C5C29 /* RCPhotoAlbum.m in Sources */,
 				3B51BB4E18BC5084000E37C6 /* RCPhotoLibrary.m in Sources */,
