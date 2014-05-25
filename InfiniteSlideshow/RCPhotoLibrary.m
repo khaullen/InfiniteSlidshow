@@ -71,7 +71,7 @@
 
 - (BOOL)isAuthorized
 {
-    return !self.authorizationError;
+    return [[self.library class] authorizationStatus] == ALAuthorizationStatusAuthorized;
 }
 
 #pragma mark - NSNotification selectors
