@@ -24,10 +24,19 @@
     static dispatch_once_t onceToken;
     static RCPhotoLibrary *defaultLibrary;
     dispatch_once(&onceToken, ^{
-        defaultLibrary = [[[self class] alloc] init];
-        defaultLibrary.library = [[ALAssetsLibrary alloc] init];
+        ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
+        defaultLibrary = [[[self class] alloc] initWithAssetsLibrary:assetsLibrary];
     });
     return defaultLibrary;
+}
+
+- (instancetype)initWithAssetsLibrary:(ALAssetsLibrary *)library
+{
+    self = [super init];
+    if (self) {
+        self.library = library;
+    }
+    return self;
 }
 
 - (void)setLibrary:(ALAssetsLibrary *)library

@@ -15,5 +15,6 @@
 @property (nonatomic, readonly) ALAssetsLibrary *library;
 
 + (instancetype)defaultLibrary;
+- (instancetype)initWithAssetsLibrary:(ALAssetsLibrary *)library;
 
 @end
