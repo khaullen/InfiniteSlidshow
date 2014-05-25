@@ -7,6 +7,7 @@
 //
 
 #import "RCLibraryViewController.h"
+#import "RCPhotoLibrary.h"
 
 @interface RCLibraryViewController ()
 
@@ -18,7 +19,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        
+        self.library = [RCPhotoLibrary defaultLibrary];
     }
     return self;
 }

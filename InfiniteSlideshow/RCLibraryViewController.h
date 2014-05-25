@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class RCPhotoLibrary;
+
 @interface RCLibraryViewController : UICollectionViewController
+
+@property (nonatomic, strong) RCPhotoLibrary *library;
 
 @end

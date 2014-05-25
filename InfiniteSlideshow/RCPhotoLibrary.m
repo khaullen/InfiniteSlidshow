@@ -19,13 +19,15 @@
 
 @implementation RCPhotoLibrary
 
-- (instancetype)initWithLibrary:(ALAssetsLibrary *)library
++ (instancetype)defaultLibrary
 {
-    self = [super init];
-    if (self) {
-        self.library = library;
-    }
-    return self;
+    static dispatch_once_t onceToken;
+    static RCPhotoLibrary *defaultLibrary;
+    dispatch_once(&onceToken, ^{
+        defaultLibrary = [[[self class] alloc] init];
+        defaultLibrary.library = [[ALAssetsLibrary alloc] init];
+    });
+    return defaultLibrary;
 }
 
 - (void)setLibrary:(ALAssetsLibrary *)library
