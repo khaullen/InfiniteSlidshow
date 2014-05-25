@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3AED9362A65F4EB590EF2640 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD596E7ADFE64DEE828BF2D5 /* libPods.a */; };
+		3B15423C19317CA6001D31AB /* RCPhotoAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B15423B19317CA6001D31AB /* RCPhotoAlbumCell.m */; };
 		3B4373D81882430D00D7F2D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4373D71882430D00D7F2D7 /* Foundation.framework */; };
 		3B4373DA1882430D00D7F2D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4373D91882430D00D7F2D7 /* CoreGraphics.framework */; };
 		3B4373DC1882430D00D7F2D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4373DB1882430D00D7F2D7 /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B15423A19317CA6001D31AB /* RCPhotoAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPhotoAlbumCell.h; sourceTree = "<group>"; };
+		3B15423B19317CA6001D31AB /* RCPhotoAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPhotoAlbumCell.m; sourceTree = "<group>"; };
 		3B4373D41882430D00D7F2D7 /* Slideshow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slideshow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4373D71882430D00D7F2D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3B4373D91882430D00D7F2D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -101,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B15423D19317CAE001D31AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B15423A19317CA6001D31AB /* RCPhotoAlbumCell.h */,
+				3B15423B19317CA6001D31AB /* RCPhotoAlbumCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		3B4373CB1882430D00D7F2D7 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +151,7 @@
 				3B4373E61882430D00D7F2D7 /* RCAppDelegate.h */,
 				3B4373E71882430D00D7F2D7 /* RCAppDelegate.m */,
 				3B4373E91882430D00D7F2D7 /* Main.storyboard */,
+				3B15423D19317CAE001D31AB /* View */,
 				3B51BB4A18BC5034000E37C6 /* Controller */,
 				3B51BB4918BC5025000E37C6 /* Model */,
 				3B4373EF1882430D00D7F2D7 /* Images.xcassets */,
@@ -339,6 +352,7 @@
 				3BFA70131887A4D2000C5C29 /* RCPhotoAlbum.m in Sources */,
 				3B4373E81882430D00D7F2D7 /* RCAppDelegate.m in Sources */,
 				3B51BB4D18BC5084000E37C6 /* RCPhotoLibrary.m in Sources */,
+				3B15423C19317CA6001D31AB /* RCPhotoAlbumCell.m in Sources */,
 				3B4373EE1882430D00D7F2D7 /* RCSlideshowViewController.m in Sources */,
 				3BD3E31618B00F4200C4CD4B /* ALAsset+Helpers.m in Sources */,
 			);
