@@ -7,14 +7,15 @@
 //
 
 #import "RCPhotoLibrary.h"
+#import "RCPhotoAlbum.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
 @interface RCPhotoLibrary ()
 
-@property (nonatomic, readwrite) ALAssetsLibrary *library;
+@property (nonatomic, strong, readwrite) ALAssetsLibrary *library;
 
-@property (nonatomic, readwrite) NSArray *allAlbums;
-@property (nonatomic, readwrite) NSError *authorizationError;
+@property (nonatomic, strong, readwrite) NSArray *allAlbums;
+@property (nonatomic, strong, readwrite) NSError *authorizationError;
 
 - (void)libraryChanged:(NSNotification *)notification;
 
@@ -48,11 +49,14 @@
         _library = library;
         if (library) {
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(libraryChanged:) name:ALAssetsLibraryChangedNotification object:library];
+            NSMutableArray *allAlbums = [NSMutableArray array];
             [library enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-                NSString *name = [group valueForProperty:ALAssetsGroupPropertyName];
-                NSLog(@"name: %@", name);
-                
                 // Create RCPhotoAlbum instance with each group, and add them all to an array
+                if (group) {
+                    [allAlbums addObject:group];
+                } else {
+                    self.allAlbums = [allAlbums copy];
+                }
                 
             } failureBlock:^(NSError *error) {
                 self.authorizationError = error;

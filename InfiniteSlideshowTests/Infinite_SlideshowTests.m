@@ -30,15 +30,13 @@
 
 - (void)enumerateGroupsWithTypes:(ALAssetsGroupType)types usingBlock:(ALAssetsLibraryGroupsEnumerationResultsBlock)enumerationBlock failureBlock:(ALAssetsLibraryAccessFailureBlock)failureBlock
 {
-    if (types == ALAssetsGroupPhotoStream) {
-        NSArray *groups = @[[[ALAssetsGroup alloc] init],
-                            [[ALAssetsGroup alloc] init],
-                            [[ALAssetsGroup alloc] init]];
-        [groups enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            enumerationBlock(obj, stop);
-        }];
-        enumerationBlock(nil, NULL);
-    }
+    NSArray *groups = @[[[ALAssetsGroup alloc] init],
+                        [[ALAssetsGroup alloc] init],
+                        [[ALAssetsGroup alloc] init]];
+    [groups enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        enumerationBlock(obj, stop);
+    }];
+    enumerationBlock(nil, NULL);
     dispatch_semaphore_signal(self.semaphore);
 }
 
@@ -111,20 +109,20 @@
     XCTAssertEqual(photoLibrary.authorizationError.code, (NSInteger)-3311);
     XCTAssertNotEqual(photoLibrary.authorizationError.code, 55);
 }
-//
-//- (void)testUserApprovesAccess
-//{
-//    TCAssetsLibrarySuccess *library = [[TCAssetsLibrarySuccess alloc] init];
-//    RCAppDelegate *appDelegate = (RCAppDelegate *)[[UIApplication sharedApplication] delegate];
-//    dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
-//        appDelegate.library = library;
-//    });
-//    dispatch_semaphore_wait(library.semaphore, DISPATCH_TIME_FOREVER);
-//    XCTAssertEqual([appDelegate.photoAlbums count], (NSUInteger)3);
-//    XCTAssertTrue(appDelegate.isAuthorized);
-//    XCTAssertNil(appDelegate.authorizationError);
-//}
-//
+
+- (void)testUserApprovesAccess
+{
+    TCAssetsLibrarySuccess *library = [[TCAssetsLibrarySuccess alloc] init];
+    __block RCPhotoLibrary *photoLibrary;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        photoLibrary = [[RCPhotoLibrary alloc] initWithAssetsLibrary:library];
+    });
+    dispatch_semaphore_wait(library.semaphore, DISPATCH_TIME_FOREVER);
+    XCTAssertEqual([photoLibrary.allAlbums count], (NSUInteger)3);
+    XCTAssertTrue(photoLibrary.isAuthorized);
+    XCTAssertNil(photoLibrary.authorizationError);
+}
+
 //- (void)testHardcodedPhotoAlbum
 //{
 //    TCAssetsLibrarySuccess *library = [[TCAssetsLibrarySuccess alloc] init];
