@@ -81,4 +81,9 @@
     
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ALAssetsLibraryChangedNotification object:self.library];
+}
+
 @end
