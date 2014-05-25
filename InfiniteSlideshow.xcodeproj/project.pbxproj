@@ -32,6 +32,7 @@
 		3BFA70131887A4D2000C5C29 /* RCPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA70121887A4D2000C5C29 /* RCPhotoAlbum.m */; };
 		3BFA70141887A4D2000C5C29 /* RCPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA70121887A4D2000C5C29 /* RCPhotoAlbum.m */; };
 		3BFA701618881609000C5C29 /* RCPhotoAlbum_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA701518881609000C5C29 /* RCPhotoAlbum_Tests.m */; };
+		A439408C0E244FF5A3C8FE66 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD596E7ADFE64DEE828BF2D5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 				3B4373F71882430E00D7F2D7 /* XCTest.framework in Frameworks */,
 				3B4373F91882430E00D7F2D7 /* UIKit.framework in Frameworks */,
 				3B4373F81882430E00D7F2D7 /* Foundation.framework in Frameworks */,
+				A439408C0E244FF5A3C8FE66 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,9 +242,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B4374091882430E00D7F2D7 /* Build configuration list for PBXNativeTarget "InfiniteSlideshowTests" */;
 			buildPhases = (
+				648A490B73A74006B5EB5B42 /* Check Pods Manifest.lock */,
 				3B4373F11882430E00D7F2D7 /* Sources */,
 				3B4373F21882430E00D7F2D7 /* Frameworks */,
 				3B4373F31882430E00D7F2D7 /* Resources */,
+				6756166254E14C2CBB26FF8E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,6 +315,36 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		3FE2598608424BC29555C000 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		648A490B73A74006B5EB5B42 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6756166254E14C2CBB26FF8E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -511,8 +545,9 @@
 		};
 		3B43740A1882430E00D7F2D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C599201007964A909ACC12C9 /* Pods.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfiniteSlideshow.app/InfiniteSlideshow";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Slideshow.app/Slideshow";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -533,8 +568,9 @@
 		};
 		3B43740B1882430E00D7F2D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C599201007964A909ACC12C9 /* Pods.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfiniteSlideshow.app/InfiniteSlideshow";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Slideshow.app/Slideshow";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
