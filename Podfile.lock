@@ -1,7 +1,9 @@
 PODS:
+  - CHTCollectionViewWaterfallLayout (0.7)
   - KASlideShow (2.0.0)
 
 DEPENDENCIES:
+  - CHTCollectionViewWaterfallLayout
   - KASlideShow (from `~/Developer/KASlideShow`)
 
 EXTERNAL SOURCES:
@@ -9,6 +11,7 @@ EXTERNAL SOURCES:
     :path: ~/Developer/KASlideShow
 
 SPEC CHECKSUMS:
+  CHTCollectionViewWaterfallLayout: 184d3b6d5456b48e93ac97e93e606bd8b68aedcc
   KASlideShow: d4325a8c2f8e68cd4347d4e50c10b8482aa1a33c
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.33.1
