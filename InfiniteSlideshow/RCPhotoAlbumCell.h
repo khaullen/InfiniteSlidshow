@@ -10,4 +10,8 @@
 
 @interface RCPhotoAlbumCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UIView *labelBackground;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+
 @end
