@@ -123,38 +123,11 @@
     XCTAssertNil(photoLibrary.authorizationError);
 }
 
-//- (void)testHardcodedPhotoAlbum
-//{
-//    TCAssetsLibrarySuccess *library = [[TCAssetsLibrarySuccess alloc] init];
-//    RCAppDelegate *appDelegate = (RCAppDelegate *)[[UIApplication sharedApplication] delegate];
-//    dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
-//        appDelegate.library = library;
-//    });
-//    dispatch_semaphore_wait(library.semaphore, DISPATCH_TIME_FOREVER);
-//    Class klass0 = [appDelegate.hardcodedAlbum class];
-//    Class klass1 = [RCPhotoAlbum class];
-////    XCTAssertEqualObjects([klass0 class], [klass1 class]);
-////    XCTAssertTrue([appDelegate.hardcodedAlbum isKindOfClass:[RCPhotoAlbum class]]);
-//    XCTAssertEqualObjects([klass1 description], [klass0 description]);
-//}
-
-// Idea for testing asynchronous methods:
+// Testing asynchronous methods:
 // Dependency injection -- inject mock ALAssetsLibrary object into RCPhotoAlbum
 // Subclass ALAssetsLibrary and override all its public methods to call either success or failure block immediately with mock data
 // Subclasses provide public semaphore properties for each method indicating when they've been called
 // Overridden methods call the success (or failure) block passed by class under test using mock data, then signal semaphore
 // Test methods wait on the corresponding semaphore, then check the side effects on class under test
-
-
-
-//- (void)testSlideshowStartsOnAppLaunch
-//{
-//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-//}
-//
-//- (void)testAppLoadsCorrectPhotoAlbum
-//{
-//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-//}
 
 @end
