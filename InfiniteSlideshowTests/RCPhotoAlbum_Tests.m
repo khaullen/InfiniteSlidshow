@@ -82,25 +82,25 @@
     [super tearDown];
 }
 
-- (void)testInitWithSource
-{
-    ALAssetsGroup *group = [[ALAssetsGroup alloc] init];
-    RCPhotoAlbum *album = [[RCPhotoAlbum alloc] initWithSource:group];
-    XCTAssertEqualObjects(album.source, group);
-}
-
-- (void)testSettingSourcePopulatesPhotosArray
-{
-    RCPhotoAlbum *album = [[RCPhotoAlbum alloc] init];
-    TCAssetsGroup *group = [[TCAssetsGroup alloc] init];
-    album.source = group;
-    XCTAssertEqual([album.photos count], (NSUInteger)3);
-}
-
-- (void)testThatPhotosArrayIsPopulatedWithUIImageObjects
-{
-    self.album.source = [[TCAssetsGroup alloc] init];
-    XCTAssertTrue([[self.album.photos lastObject] isKindOfClass:[UIImage class]]);
-}
+//- (void)testInitWithSource
+//{
+//    ALAssetsGroup *group = [[ALAssetsGroup alloc] init];
+//    RCPhotoAlbum *album = [[RCPhotoAlbum alloc] initWithSource:group];
+//    XCTAssertEqualObjects(album.source, group);
+//}
+//
+//- (void)testSettingSourcePopulatesPhotosArray
+//{
+//    RCPhotoAlbum *album = [[RCPhotoAlbum alloc] init];
+//    TCAssetsGroup *group = [[TCAssetsGroup alloc] init];
+//    album.source = group;
+//    XCTAssertEqual([album.photos count], (NSUInteger)3);
+//}
+//
+//- (void)testThatPhotosArrayIsPopulatedWithUIImageObjects
+//{
+//    self.album.source = [[TCAssetsGroup alloc] init];
+//    XCTAssertTrue([[self.album.photos lastObject] isKindOfClass:[UIImage class]]);
+//}
 
 @end

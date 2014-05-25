@@ -14,6 +14,10 @@
 
 @property (nonatomic, readonly) ALAssetsLibrary *library;
 
+@property (nonatomic, readonly) NSArray *allAlbums;
+@property (nonatomic, readonly) BOOL isAuthorized;
+@property (nonatomic, readonly) NSError *authorizationError;
+
 + (instancetype)defaultLibrary;
 - (instancetype)initWithAssetsLibrary:(ALAssetsLibrary *)library;
 
