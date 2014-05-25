@@ -9,6 +9,7 @@
 #import "RCLibraryViewController.h"
 #import "RCPhotoLibrary.h"
 #import <CHTCollectionViewWaterfallLayout.h>
+#import "RCPhotoAlbumCell.h"
 
 static NSString *const RCAlbumCell = @"RCAlbumCell";
 
@@ -41,13 +42,17 @@ static NSString *const RCAlbumCell = @"RCAlbumCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:RCAlbumCell forIndexPath:indexPath];
+    RCPhotoAlbumCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:RCAlbumCell forIndexPath:indexPath];
     switch (indexPath.row) {
         case 0: cell.backgroundColor = [UIColor yellowColor];
+            cell.name.text = @"Zero";
             break;
         case 1: cell.backgroundColor = [UIColor greenColor];
+            cell.labelBackground.backgroundColor = [UIColor grayColor];
+            cell.name.text = @"One";
             break;
         default: cell.backgroundColor = [UIColor lightGrayColor];
+            cell.name.text = @"Two";
             break;
     }
     return cell;
@@ -57,7 +62,7 @@ static NSString *const RCAlbumCell = @"RCAlbumCell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(50, 50);
+    return CGSizeMake(320, 460);
 }
 
 @end
