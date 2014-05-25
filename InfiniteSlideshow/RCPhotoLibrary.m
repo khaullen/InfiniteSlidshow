@@ -13,6 +13,9 @@
 
 @property (nonatomic, readwrite) ALAssetsLibrary *library;
 
+@property (nonatomic, readwrite) NSArray *allAlbums;
+@property (nonatomic, readwrite) NSError *authorizationError;
+
 - (void)libraryChanged:(NSNotification *)notification;
 
 @end
@@ -52,11 +55,19 @@
                 // Create RCPhotoAlbum instance with each group, and add them all to an array
                 
             } failureBlock:^(NSError *error) {
+                self.authorizationError = error;
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"This app requires photo library access", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
                 [alert show];
             }];
         }
     }
+}
+
+#pragma mark - Properties
+
+- (BOOL)isAuthorized
+{
+    return !self.authorizationError;
 }
 
 #pragma mark - NSNotification selectors

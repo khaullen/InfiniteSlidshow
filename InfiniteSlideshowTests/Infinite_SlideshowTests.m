@@ -68,17 +68,9 @@
 
 - (void)enumerateGroupsWithTypes:(ALAssetsGroupType)types usingBlock:(ALAssetsLibraryGroupsEnumerationResultsBlock)enumerationBlock failureBlock:(ALAssetsLibraryAccessFailureBlock)failureBlock
 {
-    NSError *error;
-    switch (types) {
-        case ALAssetsGroupPhotoStream:
-            error = [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"User denied access", NSUnderlyingErrorKey: [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"The operation couldn’t be completed"}], NSLocalizedFailureReasonErrorKey: @"The user has denied the application access to their media"}];
-            failureBlock(error);
-            dispatch_semaphore_signal(self.semaphore);
-            break;
-            
-        default:
-            break;
-    }
+    NSError *error = [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"User denied access", NSUnderlyingErrorKey: [NSError errorWithDomain:ALAssetsLibraryErrorDomain code:-3311 userInfo:@{NSLocalizedDescriptionKey: @"The operation couldn’t be completed"}], NSLocalizedFailureReasonErrorKey: @"The user has denied the application access to their media"}];
+    failureBlock(error);
+    dispatch_semaphore_signal(self.semaphore);
 }
 
 + (ALAuthorizationStatus)authorizationStatus
@@ -110,7 +102,7 @@
 {
     TCAssetsLibraryFailure *library = [[TCAssetsLibraryFailure alloc] init];
     __block RCPhotoLibrary *photoLibrary;
-    dispatch_async(dispatch_queue_create("appDelegate", NULL), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         photoLibrary = [[RCPhotoLibrary alloc] initWithAssetsLibrary:library];
     });
     dispatch_semaphore_wait(library.semaphore, DISPATCH_TIME_FOREVER);
